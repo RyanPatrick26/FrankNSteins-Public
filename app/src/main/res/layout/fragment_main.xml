@@ -5,41 +5,52 @@
     tools:context="com.example.install.franknsteins.MainFragment"
     android:orientation="vertical">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Frank \'N\' Steins"
-        android:id="@+id/mainTitleText"
-        android:gravity="center_horizontal"
-        android:textSize="30sp"
-        android:layout_margin="5dp" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Gourmet Franks \& Tasty Steins"
-        android:id="@+id/mainSubtitleText"
-        android:gravity="center_horizontal"
-        android:textSize="20sp"
-        android:layout_margin="1dp" />
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.example.install.franknsteins.MainFragment"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Welcome to Frank 'N' Steins: A place where Frankers of all ages can come and enjoy some of the most delicious Franks you'll ever taste!"
-        android:id="@+id/mainDescriptionText"
-        android:gravity="center_horizontal"
-        android:layout_margin="20dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:src="@drawable/franknsteins_logo" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="We also host some of the finest Steins on tap as well many delicious beers on bottle for our 19+ patrons."
-        android:id="@+id/mainDescriptionText2"
-        android:gravity="center_horizontal"
-        android:layout_margin="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Gourmet Franks \& Tasty Steins"
+                android:id="@+id/mainSubtitleText"
+                android:gravity="center_horizontal"
+                android:textSize="20sp"
+                android:layout_margin="1dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Welcome to Frank 'N' Steins: A place where Frankers of all ages can come and enjoy some of the most delicious Franks you'll ever taste!"
+                android:id="@+id/mainDescriptionText"
+                android:gravity="center_horizontal"
+                android:layout_margin="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="We also host some of the finest Steins on tap as well many delicious beers on bottle for our 19+ patrons."
+                android:id="@+id/mainDescriptionText2"
+                android:gravity="center_horizontal"
+                android:layout_margin="20dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>
