@@ -1,5 +1,6 @@
 package com.example.install.franknsteins;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,7 +18,8 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements
-        NavigationView.OnNavigationItemSelectedListener{
+        NavigationView.OnNavigationItemSelectedListener,
+        MainFragment.OnFragmentInteractionListener{
 
     // Create a fragment manager
     FragmentManager fragMan = getSupportFragmentManager();
@@ -100,5 +102,10 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }
