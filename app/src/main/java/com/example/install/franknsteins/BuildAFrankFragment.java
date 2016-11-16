@@ -4,19 +4,11 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.view.menu.ExpandedMenuView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.ExpandableListAdapter;
+import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
-import android.widget.RadioButton;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 
 /**
@@ -76,6 +68,9 @@ public class BuildAFrankFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_build_afrank, container, false);
 
+        ExpandableListView listView = (ExpandableListView)view.findViewById(R.id.build_menu);
+        listView.setAdapter(new CustomAdapter());
+
         return view;
     }
 
@@ -117,4 +112,5 @@ public class BuildAFrankFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
 }
