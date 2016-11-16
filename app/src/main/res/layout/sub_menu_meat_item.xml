@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/meat_button"
         android:textSize="20sp"
-        android:paddingLeft="10dp" />
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="20dp" />
 
 </LinearLayout>
