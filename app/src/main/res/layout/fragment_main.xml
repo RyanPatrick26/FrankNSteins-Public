@@ -31,7 +31,9 @@
                 android:id="@+id/mainSubtitleText"
                 android:gravity="center_horizontal"
                 android:textSize="@dimen/titleTextSize"
-                android:layout_margin="1dp" />
+                android:layout_margin="1dp"
+                android:textStyle="bold|italic"
+                android:textColor="@color/frankTextColor" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -39,12 +41,13 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Welcome to Frank &apos;N&apos; Steins: a place where Frankers and Frankettes of all ages can come and enjoy some of the most delicious, one-of-a-kind Franks you&apos;ll ever taste!"
                 android:id="@+id/mainDescriptionText"
-                android:gravity="center_horizontal"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 android:paddingTop="30dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingBottom="10dp" />
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/frankTextColor"
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -58,8 +61,11 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="We also host some of the finest Steins on tap as well many delicious beers on bottle for our 19+ patrons."
                 android:id="@+id/mainDescriptionText2"
-                android:gravity="center_horizontal"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:textColor="@color/frankTextColor"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:padding="8dp" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -73,7 +79,51 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Please enjoy our app. With it, you can check out our menu, get in contact with us, make a table reservation, get an estimation on your bill and even build your own custom Frank! Check out some of app features below:"
                 android:id="@+id/mainscreenFeaturesText"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:textColor="@color/frankTextColor"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:padding="8dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/menuButtonText"
+                android:id="@+id/menuButton"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/contactButtonText"
+                android:id="@+id/contactButton"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/reserveTableButtonText"
+                android:id="@+id/reserveTableButton"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/billEstimatorButtonText"
+                android:id="@+id/billEstimatorButton"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/buildafrankButtonText"
+                android:id="@+id/buildafrankButton"
+                android:textSize="20sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 

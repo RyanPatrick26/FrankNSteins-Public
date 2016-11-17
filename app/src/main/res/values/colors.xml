@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="frankBackgroundColor">#f9f968</color>
+    <color name="frankTextColor">#ca3200</color>
 </resources>
