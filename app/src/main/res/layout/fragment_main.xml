@@ -91,7 +91,9 @@
                 android:text="@string/menuButtonText"
                 android:id="@+id/menuButton"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/frankTextColor"
+                android:background="@color/colorPrimaryDark" />
 
             <Button
                 android:layout_width="match_parent"
@@ -99,7 +101,9 @@
                 android:text="@string/contactButtonText"
                 android:id="@+id/contactButton"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/frankTextColor"
+                android:background="@color/colorPrimaryDark" />
 
             <Button
                 android:layout_width="match_parent"
@@ -107,7 +111,9 @@
                 android:text="@string/reserveTableButtonText"
                 android:id="@+id/reserveTableButton"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/frankTextColor"
+                android:background="@color/colorPrimaryDark" />
 
             <Button
                 android:layout_width="match_parent"
@@ -115,7 +121,9 @@
                 android:text="@string/billEstimatorButtonText"
                 android:id="@+id/billEstimatorButton"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/frankTextColor"
+                android:background="@color/colorPrimaryDark" />
 
             <Button
                 android:layout_width="match_parent"
@@ -123,7 +131,9 @@
                 android:text="@string/buildafrankButtonText"
                 android:id="@+id/buildafrankButton"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/frankTextColor"
+                android:background="@color/colorPrimaryDark" />
         </LinearLayout>
     </ScrollView>
 
