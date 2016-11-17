@@ -27,20 +27,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Gourmet Franks &amp; Tasty Steins!"
+                android:text="Gourmet Franks\n&amp;\nTasty Steins!"
                 android:id="@+id/mainSubtitleText"
                 android:gravity="center_horizontal"
-                android:textSize="25sp"
+                android:textSize="@dimen/titleTextSize"
                 android:layout_margin="1dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Welcome to Frank 'N' Steins: A place where Frankers and Frankettes of all ages can come and enjoy some of the most delicious, one-of-a-kind Franks you'll ever taste!"
+                android:text="Welcome to Frank &apos;N&apos; Steins: a place where Frankers and Frankettes of all ages can come and enjoy some of the most delicious, one-of-a-kind Franks you&apos;ll ever taste!"
                 android:id="@+id/mainDescriptionText"
                 android:gravity="center_horizontal"
-                android:layout_margin="10dp" />
+                android:textSize="22sp"
+                android:paddingTop="30dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -63,8 +67,14 @@
                 android:id="@+id/mainscreenStein"
                 android:src="@drawable/steins_small" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Please enjoy our app. With it, you can check out our menu, get in contact with us, make a table reservation, get an estimation on your bill and even build your own custom Frank! Check out some of app features below:"
+                android:id="@+id/mainscreenFeaturesText"
+                android:layout_margin="10dp"/>
         </LinearLayout>
-
     </ScrollView>
 
 </LinearLayout>
