@@ -5,4 +5,5 @@
     <color name="colorAccent">#ecf33c</color>
     <color name="frankBackgroundColor">#f9f968</color>
     <color name="frankTextColor">#ca3200</color>
+    <color name="buttonColor">#dfe543</color>
 </resources>
