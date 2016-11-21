@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="We also host some of the finest Steins on tap as well many delicious beers on bottle for our 19+ patrons."
+                android:text="We also host some of the finest Steins on tap as well as many delicious beers on bottle for our 19+ patrons."
                 android:id="@+id/mainDescriptionText2"
                 android:layout_margin="10dp"
                 android:textColor="@color/frankTextColor"
