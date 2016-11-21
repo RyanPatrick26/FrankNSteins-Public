@@ -1,14 +1,15 @@
 package com.example.install.franknsteins;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.CheckBox;
 import android.widget.ExpandableListView;
+import android.widget.RadioButton;
+import android.widget.TextView;
 
 
 /**
@@ -54,63 +55,91 @@ public class BuildAFrankFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_build_afrank, container, false);
 
         ExpandableListView listView = (ExpandableListView)view.findViewById(R.id.build_menu);
-        listView.setAdapter(new CustomAdapter());
+        listView.setAdapter(new CustomListAdapter());
 
         return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
     }
+
+    public class CustomListAdapter extends BaseExpandableListAdapter{
+        private String[] groups = {"Meats", "Toppings", "Condiments"};
+
+        private String[][] children = {{"Beef", "Pork", "Chicken"},
+                                            {"Lettuce", "Onions", "Tomatoes", "Bacon", "Ham",
+                                                "Mozzerella", "Swiss", "Cheddar", "Chili", "Egg"},
+                                            {"Mustard", "Ketchup", "Mayonnaise", "Relish",
+                                                "Ranch", "Gravy"}};
+
+        public int getGroupCount(){
+            return groups.length;
+        }
+
+        public int getChildrenCount(int i){
+            return children[i].length;
+        }
+
+        public Object getGroup(int i){
+            return groups[i];
+        }
+
+        public Object getChild(int i, int j){
+            return children[i][j];
+        }
+
+        public long getGroupId(int i){
+            return i;
+        }
+
+        public long getChildId(int i, int j){
+            return j;
+        }
+
+        @Override
+        public boolean hasStableIds() {
+            return true;
+        }
+
+        @Override
+        public View getGroupView(int i, boolean isExpanded, View convertView, ViewGroup parent) {
+            if(convertView == null){
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.build_a_frank_list_item, parent, false);
+            }
+            TextView textView = (TextView)convertView.findViewById(R.id.main_list_header);
+            textView.setText(getGroup(i).toString());
+            return textView;
+        }
+
+        @Override
+        public View getChildView(int i, int j, boolean isLastChild, View convertView, ViewGroup parent) {
+            if(i == 0){
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.sub_menu_meat_item, parent, false);
+                RadioButton meatButton = (RadioButton)convertView.findViewById(R.id.meat_button);
+                meatButton.setText(getChild(i, j).toString());
+                return meatButton;
+            }
+            else{
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.sub_menu_toppings_item, parent, false);
+                CheckBox checkBox = (CheckBox)convertView.findViewById(R.id.topping_box);
+                checkBox.setText(getChild(i, j).toString());
+                return checkBox;
+            }
+        }
+
+        @Override
+        public boolean isChildSelectable(int i, int j) {
+            return false;
+        }
+
+
+    }
+
 
 }
