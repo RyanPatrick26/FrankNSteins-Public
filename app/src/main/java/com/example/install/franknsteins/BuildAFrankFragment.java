@@ -1,11 +1,13 @@
 package com.example.install.franknsteins;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ExpandableListView;
@@ -66,10 +68,21 @@ public class BuildAFrankFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_build_afrank, container, false);
         meatTextView = (TextView)view.findViewById(R.id.meat_text_view);
+        meatTextView.setText(null);
         toppingTextView = (TextView)view.findViewById(R.id.topping_text_view);
         //create the expandable list view and assign it a custom built adapter
         ExpandableListView listView = (ExpandableListView)view.findViewById(R.id.build_menu);
         listView.setAdapter(new CustomListAdapter());
+
+        Button submitButton = (Button)view.findViewById(R.id.submit_creation_button);
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                        "Your creation has been saved!", Snackbar.LENGTH_SHORT);
+                snackbar.show();
+            }
+        });
 
         return view;
     }
@@ -141,6 +154,7 @@ public class BuildAFrankFragment extends Fragment {
                 final RadioButton chickenButton = (RadioButton) convertView.findViewById(R.id.chicken_radio_button);
 
                 //Create event handler for selecting and deselecting the different radio buttons
+                //Adds the String Value of the Checked Radio Button to the Meat Text View
                 group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -169,6 +183,8 @@ public class BuildAFrankFragment extends Fragment {
                 final CheckBox checkBox = (CheckBox)convertView.findViewById(R.id.topping_box);
                 checkBox.setText(getChild(i, j).toString());
 
+                //create event handler for selecting and deselecting the different checkboxes
+                //adds the string value of the checkbox to the Toppings Text View
                 checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
