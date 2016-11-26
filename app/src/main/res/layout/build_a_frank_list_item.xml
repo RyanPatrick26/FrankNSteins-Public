@@ -12,6 +12,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/main_list_header"
-        android:textSize="30sp"
+        android:textSize="@dimen/menu_text_size"
         android:gravity="center_vertical" />
 </LinearLayout>

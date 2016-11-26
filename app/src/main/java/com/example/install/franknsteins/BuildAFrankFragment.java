@@ -7,8 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ExpandableListView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 
@@ -29,6 +31,8 @@ public class BuildAFrankFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    TextView meatTextView;
+    TextView toppingTextView;
 
     private OnFragmentInteractionListener mListener;
 
@@ -59,7 +63,9 @@ public class BuildAFrankFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_build_afrank, container, false);
-
+        meatTextView = (TextView)view.findViewById(R.id.meat_text_view);
+        toppingTextView = (TextView)view.findViewById(R.id.topping_text_view);
+        //create the expandable list view and assign it a custom built adapter
         ExpandableListView listView = (ExpandableListView)view.findViewById(R.id.build_menu);
         listView.setAdapter(new CustomListAdapter());
 
@@ -70,14 +76,15 @@ public class BuildAFrankFragment extends Fragment {
     }
 
     public class CustomListAdapter extends BaseExpandableListAdapter{
+        //create an array containing a list of the headings for the main list
         private String[] groups = {"Meats", "Toppings", "Condiments"};
 
-        private String[][] children = {{"Beef", "Pork", "Chicken"},
-                                            {"Lettuce", "Onions", "Tomatoes", "Bacon", "Ham",
-                                                "Mozzerella", "Swiss", "Cheddar", "Chili", "Egg"},
-                                            {"Mustard", "Ketchup", "Mayonnaise", "Relish",
-                                                "Ranch", "Gravy"}};
+        //create a 2 dimensional array containing all the items to go into the sub lists
+        private String[][] children = {{""},
+                                        {"Lettuce", "Onions", "Tomatoes", "Bacon", "Ham", "Mozzerella", "Swiss", "Cheddar", "Chili", "Egg"},
+                                        {"Mustard", "Ketchup", "Mayonnaise", "Relish", "Ranch", "Gravy"}};
 
+        //required methods from the BaseExpandableListAdapter class
         public int getGroupCount(){
             return groups.length;
         }
@@ -109,26 +116,68 @@ public class BuildAFrankFragment extends Fragment {
 
         @Override
         public View getGroupView(int i, boolean isExpanded, View convertView, ViewGroup parent) {
-            if(convertView == null){
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.build_a_frank_list_item, parent, false);
-            }
+            //initialize the convertView to the layout for the main list headers
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.build_a_frank_list_item, parent, false);
+            //create a TextView for the main headers and put the String value for that header
+            //using the groups array
             TextView textView = (TextView)convertView.findViewById(R.id.main_list_header);
             textView.setText(getGroup(i).toString());
             return textView;
         }
-
         @Override
         public View getChildView(int i, int j, boolean isLastChild, View convertView, ViewGroup parent) {
             if(i == 0){
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.sub_menu_meat_item, parent, false);
-                RadioButton meatButton = (RadioButton)convertView.findViewById(R.id.meat_button);
-                meatButton.setText(getChild(i, j).toString());
-                return meatButton;
+                //initialize the convertView to the layout for the sub-list that uses radio buttons
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.meat_sub_menu, parent, false);
+                //create a RadioGroup that holds the different radio buttons for the different meats
+                RadioGroup group = (RadioGroup)convertView.findViewById(R.id.meat_group);
+
+                //create variables for the different radio buttons
+                final RadioButton porkButton = (RadioButton)convertView.findViewById(R.id.pork_radio_button);
+                final RadioButton beefButton = (RadioButton)convertView.findViewById(R.id.beef_radio_button);
+                final RadioButton chickenButton = (RadioButton) convertView.findViewById(R.id.chicken_radio_button);
+
+                //Create event handler for selecting and deselecting the different radio buttons
+                group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+                        if(checkedId == porkButton.getId()){
+                            meatTextView.setText("");
+                            meatTextView.append("* " + porkButton.getText());
+                        }
+                        else if(checkedId == beefButton.getId()){
+                            meatTextView.setText("");
+                            meatTextView.append("* " + beefButton.getText());
+                        }
+                        else{
+                            meatTextView.setText("");
+                            meatTextView.append("* " + chickenButton.getText());
+                        }
+                    }
+                });
+
+                return group;
             }
             else{
+                //initialize the convertView to the layout for the sub-list that uses check boxes
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.sub_menu_toppings_item, parent, false);
-                CheckBox checkBox = (CheckBox)convertView.findViewById(R.id.topping_box);
+                //create a CheckBox for the topping and condiments sub-headers and put the String value for those
+                //list items using the children array
+                final CheckBox checkBox = (CheckBox)convertView.findViewById(R.id.topping_box);
                 checkBox.setText(getChild(i, j).toString());
+
+                checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        if(isChecked){
+
+                        }
+                        else{
+                            
+                        }
+                    }
+                });
+
                 return checkBox;
             }
         }
@@ -138,8 +187,6 @@ public class BuildAFrankFragment extends Fragment {
             return false;
         }
 
-
     }
-
 
 }

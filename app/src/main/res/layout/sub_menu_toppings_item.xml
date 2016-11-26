@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/topping_box"
-        android:textSize="20sp"
-        android:paddingLeft="10dp"
-        android:layout_marginLeft="20dp" />
+        android:textSize="@dimen/sub_menu_text_size"
+        android:paddingLeft="@dimen/sub_menu_padding"
+        android:layout_marginLeft="@dimen/sub_menu_indent" />
 </LinearLayout>

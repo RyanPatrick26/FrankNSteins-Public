@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@color/material_grey_300">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/meat_group">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Beef"
+            android:id="@+id/beef_radio_button"
+            android:checked="false"
+            android:textSize="@dimen/sub_menu_text_size"
+            android:paddingLeft="@dimen/sub_menu_padding"
+            android:layout_marginLeft="@dimen/sub_menu_indent" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chicken"
+            android:id="@+id/chicken_radio_button"
+            android:checked="false"
+            android:textSize="@dimen/sub_menu_text_size"
+            android:paddingLeft="@dimen/sub_menu_padding"
+            android:layout_marginLeft="@dimen/sub_menu_indent" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pork"
+            android:id="@+id/pork_radio_button"
+            android:checked="false"
+            android:textSize="@dimen/sub_menu_text_size"
+            android:paddingLeft="@dimen/sub_menu_padding"
+            android:layout_marginLeft="@dimen/sub_menu_indent" />
+    </RadioGroup>
+</LinearLayout>

@@ -20,10 +20,38 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="2">
-        <TextView
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/creation_text_box"
+                android:text="Your hotdog currently has:"
+                android:textSize="@dimen/text_view_font_size"
+                android:textColor="@color/abc_primary_text_disable_only_material_light" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/meat_text_view"
+                android:textColor="@color/abc_input_method_navigation_guard"
+                android:textSize="@dimen/text_view_font_size" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/topping_text_view"
+                android:textSize="@dimen/text_view_font_size"
+                android:textColor="@color/abc_primary_text_disable_only_material_light" />
+        </LinearLayout>
     </ScrollView>
+
+
 
     <Button
         android:layout_width="150dp"
