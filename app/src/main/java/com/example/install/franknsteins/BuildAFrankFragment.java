@@ -13,6 +13,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -83,6 +85,7 @@ public class BuildAFrankFragment extends Fragment {
         private String[][] children = {{""},
                                         {"Lettuce", "Onions", "Tomatoes", "Bacon", "Ham", "Mozzerella", "Swiss", "Cheddar", "Chili", "Egg"},
                                         {"Mustard", "Ketchup", "Mayonnaise", "Relish", "Ranch", "Gravy"}};
+       private ArrayList<String> toppingList = new ArrayList<>();
 
         //required methods from the BaseExpandableListAdapter class
         public int getGroupCount(){
@@ -170,10 +173,14 @@ public class BuildAFrankFragment extends Fragment {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         if(isChecked){
-
+                            toppingList.add((String)checkBox.getText());
                         }
                         else{
-                            
+                            toppingList.remove(checkBox.getText());
+                        }
+                        toppingTextView.setText("");
+                        for(int i = 0; i < toppingList.size(); i++){
+                            toppingTextView.append("* " + toppingList.get(i) + "\n");
                         }
                     }
                 });
