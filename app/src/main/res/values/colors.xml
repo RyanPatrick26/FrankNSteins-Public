@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="hotdog_color">#c45d04</color>
     <color name="colorPrimary">#ab3202</color>
     <color name="colorPrimaryDark">#b2b248</color>
     <color name="colorAccent">#ecf33c</color>

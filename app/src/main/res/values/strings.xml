@@ -8,6 +8,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="buildafrankButtonText">BUILD YOUR OWN FRANK</string>
     <string name="billEstimatorButtonText">BILL ESTIMATOR</string>
     <string name="reserveTableButtonText">RESERVE A TABLE</string>
