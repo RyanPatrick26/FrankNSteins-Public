@@ -1,13 +1,131 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.install.franknsteins.ContactFragment">
+    tools:context="com.example.install.franknsteins.ContactFragment"
+    android:background="@color/frankBackgroundColor"
+    android:orientation="vertical"
+    android:elevation="@dimen/design_navigation_elevation">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Contact Us!"
+        android:id="@+id/contactTitleText"
+        android:gravity="center_horizontal"
+        android:textColor="@color/frankTextColor"
+        android:textStyle="bold"
+        android:textSize="@dimen/titleTextSize"
+        android:paddingTop="0dp"
+        android:layout_weight="1" />
 
-</FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Frank 'N' Steins Restaurant\n1178 Tecumseh Road, Windsor\n(519) - 780 3445\nfranknsteins@gmail.com\nwww.franknsteins.ca"
+        android:id="@+id/contactInfoText"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/frankTextColor"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Additional contact features:"
+        android:id="@+id/additionalInfoText"
+        android:textSize="22sp"
+        android:textColor="@color/frankTextColor"
+        android:textStyle="bold|italic"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Email Us"
+        android:id="@+id/emailButton"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@color/frankTextColor"
+        android:textColor="@color/frankBackgroundColor"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:elevation="@dimen/design_navigation_elevation"
+        android:layout_weight="1"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="ADD TO CONTACTS"
+        android:id="@+id/button2"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@color/frankTextColor"
+        android:textColor="@color/frankBackgroundColor"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:elevation="@dimen/design_navigation_elevation"
+        android:layout_weight="1"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="FIND LOCATION"
+        android:id="@+id/button3"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@color/frankTextColor"
+        android:textColor="@color/frankBackgroundColor"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:elevation="@dimen/design_navigation_elevation"
+        android:layout_weight="1"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="GO TO WEBSITE"
+        android:id="@+id/button4"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@color/frankTextColor"
+        android:textColor="@color/frankBackgroundColor"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:elevation="@dimen/design_navigation_elevation"
+        android:layout_weight="1"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="SHARE WITH A FRIEND"
+        android:id="@+id/button"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@color/frankTextColor"
+        android:textColor="@color/frankBackgroundColor"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:elevation="@dimen/design_navigation_elevation"
+        android:layout_weight="1"
+        android:textStyle="bold" />
+</LinearLayout>
