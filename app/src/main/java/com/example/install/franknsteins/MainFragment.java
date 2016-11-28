@@ -4,9 +4,12 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -27,7 +30,17 @@ public class MainFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    // Create the navigation buttons
+    private Button menuButton;
+    private Button contactButton;
+    private Button reserveTableButton;
+    private Button billEstimatorButton;
+    private Button buildaFrankButton;
+
     private OnFragmentInteractionListener mListener;
+
+    // Create the fragment manager
+    FragmentManager fragMan;
 
     public MainFragment() {
         // Required empty public constructor
@@ -65,6 +78,21 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main, container, false);
+
+        // Link the buttons to the corresponding button IDs
+        menuButton = (Button) view.findViewById(R.id.menuButton);
+        contactButton = (Button) view.findViewById(R.id.contactButton);
+        reserveTableButton = (Button) view.findViewById(R.id.reserveTableButton);
+        billEstimatorButton = (Button) view.findViewById(R.id.billEstimatorButton);
+        buildaFrankButton = (Button) view.findViewById(R.id.buildafrankButton);
+
+        // Set the event listeners for the buttons
+        menuButton.setOnClickListener(menuButtonListener);
+        contactButton.setOnClickListener(contactButtonListener);
+        reserveTableButton.setOnClickListener(reserveTableButtonListener);
+        billEstimatorButton.setOnClickListener(billEstimatorButtonListener);
+        buildaFrankButton.setOnClickListener(buildaFrankButtonListener);
+
         return view;
     }
 
@@ -106,4 +134,93 @@ public class MainFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+    /**
+     * On Click Listener for the Menu Button
+     * Switches to the MenuFragment
+     */
+    public View.OnClickListener menuButtonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // Create the fragment transaction
+            FragmentTransaction fragTrans = fragMan.beginTransaction();
+
+            fragTrans.replace(R.id.mainContent, new MenuFragment());
+            fragTrans.addToBackStack(null);
+            fragTrans.commit();
+        }
+    };
+
+    /**
+     * On Click Listener for the Menu Button
+     * Switches to the MenuFragment
+     */
+    public View.OnClickListener contactButtonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // Create the instantiate the fragment manager
+            fragMan = getActivity().getSupportFragmentManager();
+            // Create the fragment transaction
+            FragmentTransaction fragTrans = fragMan.beginTransaction();
+
+            fragTrans.replace(R.id.mainContent, new ContactFragment());
+            fragTrans.addToBackStack(null);
+            fragTrans.commit();
+        }
+    };
+
+    /**
+     * On Click Listener for the Table Reserve Button
+     * Switches to the TableReserveFragment
+     */
+    public View.OnClickListener reserveTableButtonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // Create the instantiate the fragment manager
+            fragMan = getActivity().getSupportFragmentManager();
+            // Create the fragment transaction
+            FragmentTransaction fragTrans = fragMan.beginTransaction();
+
+            fragTrans.replace(R.id.mainContent, new TableReserveFragment());
+            fragTrans.addToBackStack(null);
+            fragTrans.commit();
+        }
+    };
+
+    /**
+     * On Click Listener for the Bill Estimator Button
+     * Switches to the BillEstimatorFragment
+     */
+    public View.OnClickListener billEstimatorButtonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // Create the instantiate the fragment manager
+            fragMan = getActivity().getSupportFragmentManager();
+            // Create the fragment transaction
+            FragmentTransaction fragTrans = fragMan.beginTransaction();
+
+            fragTrans.replace(R.id.mainContent, new BillEstimatorFragment());
+            fragTrans.addToBackStack(null);
+            fragTrans.commit();
+        }
+    };
+
+    /**
+     * On Click Listener for the Build A Frank Button
+     * Switches to the BuildAFrankFragment
+     */
+    public View.OnClickListener buildaFrankButtonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // Create the instantiate the fragment manager
+            fragMan = getActivity().getSupportFragmentManager();
+            // Create the fragment transaction
+            FragmentTransaction fragTrans = fragMan.beginTransaction();
+
+            fragTrans.replace(R.id.mainContent, new BuildAFrankFragment());
+            fragTrans.addToBackStack(null);
+            fragTrans.commit();
+        }
+    };
+
 }
