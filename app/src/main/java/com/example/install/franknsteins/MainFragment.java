@@ -40,7 +40,7 @@ public class MainFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     // Create the fragment manager
-    FragmentManager fragMan = getActivity().getSupportFragmentManager();
+    FragmentManager fragMan;
 
     public MainFragment() {
         // Required empty public constructor
@@ -143,11 +143,11 @@ public class MainFragment extends Fragment {
         @Override
         public void onClick(View v) {
             // Create the fragment transaction
-            FragmentTransaction trans = fragMan.beginTransaction();
+            FragmentTransaction fragTrans = fragMan.beginTransaction();
 
-            trans.replace(R.id.mainContent, new MenuFragment());
-            trans.addToBackStack(null);
-            trans.commit();
+            fragTrans.replace(R.id.mainContent, new MenuFragment());
+            fragTrans.addToBackStack(null);
+            fragTrans.commit();
         }
     };
 
@@ -158,12 +158,14 @@ public class MainFragment extends Fragment {
     public View.OnClickListener contactButtonListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            // Create the instantiate the fragment manager
+            fragMan = getActivity().getSupportFragmentManager();
             // Create the fragment transaction
-            FragmentTransaction trans = fragMan.beginTransaction();
+            FragmentTransaction fragTrans = fragMan.beginTransaction();
 
-            trans.replace(R.id.mainContent, new ContactFragment());
-            trans.addToBackStack(null);
-            trans.commit();
+            fragTrans.replace(R.id.mainContent, new ContactFragment());
+            fragTrans.addToBackStack(null);
+            fragTrans.commit();
         }
     };
 
@@ -174,12 +176,14 @@ public class MainFragment extends Fragment {
     public View.OnClickListener reserveTableButtonListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            // Create the instantiate the fragment manager
+            fragMan = getActivity().getSupportFragmentManager();
             // Create the fragment transaction
-            FragmentTransaction trans = fragMan.beginTransaction();
+            FragmentTransaction fragTrans = fragMan.beginTransaction();
 
-            trans.replace(R.id.mainContent, new TableReserveFragment());
-            trans.addToBackStack(null);
-            trans.commit();
+            fragTrans.replace(R.id.mainContent, new TableReserveFragment());
+            fragTrans.addToBackStack(null);
+            fragTrans.commit();
         }
     };
 
@@ -190,12 +194,14 @@ public class MainFragment extends Fragment {
     public View.OnClickListener billEstimatorButtonListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            // Create the instantiate the fragment manager
+            fragMan = getActivity().getSupportFragmentManager();
             // Create the fragment transaction
-            FragmentTransaction trans = fragMan.beginTransaction();
+            FragmentTransaction fragTrans = fragMan.beginTransaction();
 
-            trans.replace(R.id.mainContent, new BillEstimatorFragment());
-            trans.addToBackStack(null);
-            trans.commit();
+            fragTrans.replace(R.id.mainContent, new BillEstimatorFragment());
+            fragTrans.addToBackStack(null);
+            fragTrans.commit();
         }
     };
 
@@ -206,12 +212,14 @@ public class MainFragment extends Fragment {
     public View.OnClickListener buildaFrankButtonListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            // Create the instantiate the fragment manager
+            fragMan = getActivity().getSupportFragmentManager();
             // Create the fragment transaction
-            FragmentTransaction trans = fragMan.beginTransaction();
+            FragmentTransaction fragTrans = fragMan.beginTransaction();
 
-            trans.replace(R.id.mainContent, new BuildAFrankFragment());
-            trans.addToBackStack(null);
-            trans.commit();
+            fragTrans.replace(R.id.mainContent, new BuildAFrankFragment());
+            fragTrans.addToBackStack(null);
+            fragTrans.commit();
         }
     };
 
