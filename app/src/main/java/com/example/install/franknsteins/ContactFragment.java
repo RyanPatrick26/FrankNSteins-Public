@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -26,6 +27,13 @@ public class ContactFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    // Create the buttons
+    Button emailButton;
+    Button addContactButton;
+    Button findLocationButton;
+    Button websiteButton;
+    Button shareButton;
 
     private OnFragmentInteractionListener mListener;
 
@@ -65,7 +73,19 @@ public class ContactFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_contact, container, false);
-
+        // Instantiate the buttons
+        emailButton = (Button) view.findViewById(R.id.emailButton);
+        addContactButton = (Button) view.findViewById(R.id.addContactButton);
+        findLocationButton = (Button) view.findViewById(R.id.findLocationButton);
+        websiteButton = (Button) view.findViewById(R.id.websiteButton);
+        shareButton = (Button) view.findViewById(R.id.shareButton);
+        // Add OnClick listeners to the buttons
+        emailButton.setOnClickListener(sendEmail);
+        addContactButton.setOnClickListener(addToContacts);
+        findLocationButton.setOnClickListener(findLocation);
+        websiteButton.setOnClickListener(goToWebsite);
+        shareButton.setOnClickListener(shareWithFriend);
+        
         return view;
     }
 
@@ -107,4 +127,40 @@ public class ContactFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+    public View.OnClickListener sendEmail = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+        }
+    };
+
+    public  View.OnClickListener addToContacts = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+        }
+    };
+
+    public View.OnClickListener findLocation = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+        }
+    };
+
+    public View.OnClickListener goToWebsite = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+        }
+    };
+
+    public View.OnClickListener shareWithFriend = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+        }
+    };
+
 }
