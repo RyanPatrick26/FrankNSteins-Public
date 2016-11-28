@@ -1,8 +1,11 @@
 package com.example.install.franknsteins;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceFragment;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +30,11 @@ public class ContactFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    // Create the email variables
+    private String emailAddress = "franknsteins@gmail.com";
+    private String emailSubject = "Question regarding Frank \'N\' Steins";
+    private String emailBody = "I have a question regarding your restaurant...\n";
 
     // Create the buttons
     Button emailButton;
@@ -85,7 +93,7 @@ public class ContactFragment extends Fragment {
         findLocationButton.setOnClickListener(findLocation);
         websiteButton.setOnClickListener(goToWebsite);
         shareButton.setOnClickListener(shareWithFriend);
-        
+
         return view;
     }
 
@@ -131,7 +139,28 @@ public class ContactFragment extends Fragment {
     public View.OnClickListener sendEmail = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            // populate a string array with the email address
+            String[] address = {emailAddress};
+            // create a new sendto action intent
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            // set the URI data to 'mailto:'
+            intent.setData(Uri.parse("mailto:"));
+            // add the recipient email address
+            intent.putExtra(Intent.EXTRA_EMAIL, emailAddress);
+            // add the subject line to the email
+            intent.putExtra(Intent.EXTRA_SUBJECT, emailSubject);
+            // add the intro body of the email
+            intent.putExtra(Intent.EXTRA_TEXT, emailBody);
+            // check if the user has an email client installed
+            if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                // launch the intent
+                startActivity(intent);
+            } else {
+                // if they don't have an email client, display a snackbar
+                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                        "No installed email client to complete process.", Snackbar.LENGTH_SHORT);
+                snackbar.show();
+            }
         }
     };
 
