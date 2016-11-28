@@ -42,7 +42,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:text="+"
-        android:id="@+id/textView2"
+        android:id="@+id/add_button"
         android:textSize="20sp"
         android:gravity="center"
         android:textColor="@color/abc_input_method_navigation_guard" />

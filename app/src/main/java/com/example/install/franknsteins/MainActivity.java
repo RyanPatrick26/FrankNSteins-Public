@@ -18,7 +18,9 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
         BuildAFrankFragment.OnFragmentInteractionListener,
-        MainFragment.OnFragmentInteractionListener{
+        MainFragment.OnFragmentInteractionListener,
+        MenuFragment.OnFragmentInteractionListener,
+        MenuListFragment.OnFragmentInteractionListener{
 
     // Create a fragment manager
     FragmentManager fragMan = getSupportFragmentManager();
@@ -90,6 +92,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_build_a_frank) {
             trans.replace(R.id.mainContent, new BuildAFrankFragment());
+            trans.addToBackStack(null);
+            trans.commit();
+        }
+
+        if (id == R.id.nav_menu) {
+            trans.replace(R.id.mainContent, new MenuFragment());
             trans.addToBackStack(null);
             trans.commit();
         }

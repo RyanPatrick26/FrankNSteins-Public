@@ -4,6 +4,9 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +29,7 @@ public class MenuFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private SectionsPagerAdapter mPagerAdatper;
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,7 +68,13 @@ public class MenuFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_menu, container, false);
+        View view = inflater.inflate(R.layout.fragment_menu, container, false);
+
+        mPagerAdatper = new SectionsPagerAdapter(getChildFragmentManager());
+        ViewPager mViewPager = (ViewPager)view.findViewById(R.id.restaurant_menu);
+        mViewPager.setAdapter(mPagerAdatper);
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -89,6 +99,31 @@ public class MenuFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch(position){
+                case 0:
+                    return MenuListFragment.newInstance("Franks", position);
+                case 1:
+                    return MenuListFragment.newInstance("Steins", position);
+                case 2:
+                    return MenuListFragment.newInstance("Non-alchoholic Drinks", position);
+                default:
+                    return MenuListFragment.newInstance("Franks", 0);
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
+        }
     }
 
     /**
