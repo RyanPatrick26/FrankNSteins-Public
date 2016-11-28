@@ -209,24 +209,85 @@ public class ContactFragment extends Fragment {
         }
     };
 
+    /**
+     * findLocation
+     * This OnClickListener will attempt to open up the user's maps software
+     * and populate it with the location of the restaurant.
+     * If the user does not have the correct software installed on their device,
+     * a Snackbar informing the user of this will be displayed instead.
+     */
     public View.OnClickListener findLocation = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            // Create a uri for the location of the restaurant
+            Uri restaurantLocation = Uri.parse("geo:0,0?q=42.2979139,-83.0441145(Frank 'N' Steins)");
+            // Create the action view intent
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(restaurantLocation);
+            // Check to see if the user has a map client on their device
+            if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                startActivity(intent);
+            } else {
+                // if they don't have a maps software on their device, display a snackbar
+                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                        "No installed software to complete the task.", Snackbar.LENGTH_SHORT);
+            }
         }
     };
 
+    /**
+     * goToWebsite
+     * This OnClickListener will attempt to open up the user's web browser and
+     * navigate to the Frank 'N' Steins website.
+     * If the user does not have the correct software installed on their device,
+     * a Snackbar informing the user of this will be displayed instead.
+     */
     public View.OnClickListener goToWebsite = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            // create the uri for the website
+            Uri website = Uri.parse("https://www.franknsteins.ca");
+            // create the action view intent
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            // set the data for the intent
+            intent.setData(website);
+            // check to see if the user has a web browser that they're able to use
+            if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                startActivity(intent);
+            } else {
+                // if they don't have a web browser installed on their device, display a snackbar
+                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                        "No installed software to complete the task.", Snackbar.LENGTH_SHORT);
+            }
         }
     };
 
+    /**
+     * shareWithFriend
+     * This OnClickListener will attempt to open up the user's SMS application
+     * and send a pre-written message to a number of their choosing.
+     * If the user does not have the correct software installed on their device,
+     * a Snackbar informing the user of this will be displayed instead.
+     */
     public View.OnClickListener shareWithFriend = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            // create the action send to intent
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            // set the 'smsto:' data for the intent
+            intent.setData(Uri.parse("smsto:"));
+            // set the body of the sms
+            intent.putExtra("sms_body", "Check out this amazing restaurant called Frank 'N' Steins! "
+                        +"https://www.franknsteins.ca");
+            // check to see if the user has a SMS application installed on their device
+            if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                startActivity(intent);
+            } else {
+                // if the user does not have SMS, display a snackbar
+                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                        "No installed software to complete the task", Snackbar.LENGTH_SHORT);
+                snackbar.show();
+            }
         }
     };
 

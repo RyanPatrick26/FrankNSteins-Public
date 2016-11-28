@@ -25,14 +25,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Frank 'N' Steins Restaurant\n1178 Tecumseh Road, Windsor\n(519) - 780 3445\nfranknsteins@gmail.com\nwww.franknsteins.ca"
+        android:text="Frank 'N' Steins Restaurant\n1178 Tecumseh Road W, Windsor\n(519) - 780 3445\nfranknsteins@gmail.com\nwww.franknsteins.ca"
         android:id="@+id/contactInfoText"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/frankTextColor"
         android:paddingTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:layout_weight="1" />
 
     <TextView
@@ -41,7 +41,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Additional contact features:"
         android:id="@+id/additionalInfoText"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textColor="@color/frankTextColor"
         android:textStyle="bold|italic"
         android:gravity="center_horizontal"
