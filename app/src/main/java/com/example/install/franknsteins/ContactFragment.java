@@ -140,13 +140,13 @@ public class ContactFragment extends Fragment {
         @Override
         public void onClick(View v) {
             // populate a string array with the email address
-            String[] address = {emailAddress};
+            String[] addressEmail = {emailAddress};
             // create a new sendto action intent
             Intent intent = new Intent(Intent.ACTION_SENDTO);
             // set the URI data to 'mailto:'
             intent.setData(Uri.parse("mailto:"));
             // add the recipient email address
-            intent.putExtra(Intent.EXTRA_EMAIL, emailAddress);
+            intent.putExtra(Intent.EXTRA_EMAIL, addressEmail);
             // add the subject line to the email
             intent.putExtra(Intent.EXTRA_SUBJECT, emailSubject);
             // add the intro body of the email
