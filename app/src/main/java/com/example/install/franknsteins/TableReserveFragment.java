@@ -65,6 +65,7 @@ public class TableReserveFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_table_reserve, container, false);
+        // Build the table reservation system
 
         return view;
     }
