@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+import android.provider.ContactsContract;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -35,6 +36,10 @@ public class ContactFragment extends Fragment {
     private String emailAddress = "franknsteins@gmail.com";
     private String emailSubject = "Question regarding Frank \'N\' Steins";
     private String emailBody = "I have a question regarding your restaurant...\n";
+
+    // Create the add contact variables
+    private String contactName = "Frank \'N\' Steins";
+    private String contactNumber = "5197803445";
 
     // Create the buttons
     Button emailButton;
@@ -136,6 +141,14 @@ public class ContactFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
+    /**
+     * sendEmail
+     * This OnClickListener will attempt to open up the user's email client
+     * and populate a basic template for an email to send to the Frank 'N'
+     * Steins email address.
+     * If the user does not have an email client installed on their device,
+     * a Snackbar informing the user of this will be displayed instead.
+     */
     public View.OnClickListener sendEmail = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -164,10 +177,35 @@ public class ContactFragment extends Fragment {
         }
     };
 
+    /**
+     * addToContacts
+     * This OnClickListener will attempt to open up the user's contacts
+     * and add the restaurant to the user's contact list.
+     * If the user does not have the correct software installed on their device,
+     * a Snackbar informing the user of this will be displayed instead.
+     */
     public  View.OnClickListener addToContacts = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            // create an action insert intent
+            Intent intent = new Intent(Intent.ACTION_INSERT);
+            // set the type of the intent
+            intent.setType(ContactsContract.Contacts.CONTENT_TYPE);
+            // set the name of the contact
+            intent.putExtra(ContactsContract.Intents.Insert.NAME, contactName);
+            // set the phone number of the contact
+            intent.putExtra(ContactsContract.Intents.Insert.EMAIL, emailAddress);
+            // set the phone number of the contact
+            intent.putExtra(ContactsContract.Intents.Insert.PHONE, contactNumber);
+            // check to see if the user can add contacts
+            if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                startActivity(intent);
+            } else {
+                // if they don't have the ability to add contacts on their device, display a snackbar
+                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                        "No installed software to complete the task.", Snackbar.LENGTH_SHORT);
+                snackbar.show();
+            }
         }
     };
 
