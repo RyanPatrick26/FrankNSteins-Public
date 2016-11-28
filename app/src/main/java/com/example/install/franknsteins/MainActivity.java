@@ -88,7 +88,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         FragmentTransaction trans = fragMan.beginTransaction();
 
-        if (id == R.id.nav_build_a_frank) {
+        if (id == R.id.nav_about_us) {
+            trans.replace(R.id.mainContent, new MainFragment());
+            trans.addToBackStack(null);
+            trans.commit();
+        }
+        else if (id == R.id.nav_build_a_frank) {
             trans.replace(R.id.mainContent, new BuildAFrankFragment());
             trans.addToBackStack(null);
             trans.commit();
