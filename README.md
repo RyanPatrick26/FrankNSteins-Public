@@ -1,7 +1,12 @@
 # Frank 'N' Steins
 
 ## Synopsis
-The FrankNSteins Application is an informational application for the Frank 'N' Steins hotdog and beer restaurant. The application will contain information about the restaurant, the food and drinks offered, the location and additional contact information, social media links, a table reservation feature, a feature for users to build their own food creation, a bill estimator feature, and possible future features.
+The FrankNSteins Application is an informational application developped for the ***Frank 'N' Steins*** hotdog and beer restaurant. The application will contain information about the restaurant, the food and drinks offered, the location and additional contact information, social media links, etc. The application will also have additional features such as a table reservation feature, a feature for users to build their own food creation, and a bill estimator feature.
+
+Here is the application logo (Hover for image description):
+
+![alt-text][applogo]
+[applogo]: https://github.com/nicholasallaire85/FrankNSteins/blob/staging/app/src/main/res/drawable/franknsteins_logo_small.png "Frank 'N' Steins Logo"
 
 ## Contributors
 Ryan Patrick - RyanPatrick26
