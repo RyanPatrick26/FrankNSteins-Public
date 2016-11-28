@@ -290,5 +290,5 @@ public class ContactFragment extends Fragment {
             }
         }
     };
-
+    
 }
