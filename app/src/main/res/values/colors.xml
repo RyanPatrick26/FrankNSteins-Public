@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="hotdog_color">#c45d04</color>
+    <color name="colorPrimary">#ab3202</color>
+    <color name="colorPrimaryDark">#b2b248</color>
+    <color name="colorAccent">#ecf33c</color>
+    <color name="frankBackgroundColor">#f9f968</color>
+    <color name="frankTextColor">#ca3200</color>
+    <color name="buttonColor">#dfe543</color>
 </resources>

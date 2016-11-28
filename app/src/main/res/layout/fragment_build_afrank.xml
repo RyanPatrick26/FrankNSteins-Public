@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.install.franknsteins.BuildAFrankFragment"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/build_menu"
+        android:layout_weight="1"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="0.5dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/creation_text_box"
+                android:text="Your hotdog currently has:"
+                android:textSize="@dimen/text_view_font_size"
+                android:textColor="@color/abc_primary_text_disable_only_material_light" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/meat_text_view"
+                android:textColor="@color/abc_input_method_navigation_guard"
+                android:textSize="@dimen/text_view_font_size" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/topping_text_view"
+                android:textSize="@dimen/text_view_font_size"
+                android:textColor="@color/abc_primary_text_disable_only_material_light" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Submit"
+        android:id="@+id/submit_creation_button"
+        android:background="@color/hotdog_color"
+        android:layout_gravity="right"
+        android:layout_margin="15dp" />
+
+
+</LinearLayout>

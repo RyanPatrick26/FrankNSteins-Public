@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@color/material_grey_300">
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/topping_box"
+        android:textSize="@dimen/sub_menu_text_size"
+        android:paddingLeft="@dimen/sub_menu_padding"
+        android:layout_marginLeft="@dimen/sub_menu_indent" />
+</LinearLayout>
