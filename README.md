@@ -13,6 +13,12 @@ Ryan Patrick - RyanPatrick26
 
 Nicholas Allaire - nicholasallaire85
 
+## Copyright Information
+Copyright © 2016 by Ryan Patrick & Nicholas Allaire, all rights reserved.
+
+Frank 'N' Steins logo created by Nicholas Allaire.
+
+Red background image for the logo and all other images are free to use under Creative Commons.
 
 ## Git Config Instructions
 Set name: `git config --global user.name` `<<<YOUR NAME HERE>>>`
