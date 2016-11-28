@@ -18,7 +18,11 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
         BuildAFrankFragment.OnFragmentInteractionListener,
-        MainFragment.OnFragmentInteractionListener{
+        MainFragment.OnFragmentInteractionListener,
+        BillEstimatorFragment.OnFragmentInteractionListener,
+        ContactFragment.OnFragmentInteractionListener,
+        MenuFragment.OnFragmentInteractionListener,
+        TableReserveFragment.OnFragmentInteractionListener{
 
     // Create a fragment manager
     FragmentManager fragMan = getSupportFragmentManager();
