@@ -18,7 +18,11 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
         BuildAFrankFragment.OnFragmentInteractionListener,
-        MainFragment.OnFragmentInteractionListener{
+        MainFragment.OnFragmentInteractionListener,
+        BillEstimatorFragment.OnFragmentInteractionListener,
+        ContactFragment.OnFragmentInteractionListener,
+        MenuFragment.OnFragmentInteractionListener,
+        TableReserveFragment.OnFragmentInteractionListener{
 
     // Create a fragment manager
     FragmentManager fragMan = getSupportFragmentManager();
@@ -36,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        fragMan = getSupportFragmentManager();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -88,7 +91,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         FragmentTransaction trans = fragMan.beginTransaction();
 
-        if (id == R.id.nav_build_a_frank) {
+        if (id == R.id.nav_about_us) {
+            trans.replace(R.id.mainContent, new MainFragment());
+            trans.addToBackStack(null);
+            trans.commit();
+        }
+        else if (id == R.id.nav_build_a_frank) {
             trans.replace(R.id.mainContent, new BuildAFrankFragment());
             trans.addToBackStack(null);
             trans.commit();
