@@ -91,13 +91,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         FragmentTransaction trans = fragMan.beginTransaction();
 
+        // Check which nav item is selected and then perform the fragment transaction
         if (id == R.id.nav_about_us) {
+            // replace whatever is on the mainContent screen with the MainFragment
             trans.replace(R.id.mainContent, new MainFragment());
+            trans.addToBackStack(null);
+            trans.commit();
+        } else if (id == R.id.nav_menu) {
+            // replace whatever is on the mainContent screen with the MenuFragment
+            trans.replace(R.id.mainContent, new MenuFragment());
+            trans.addToBackStack(null);
+            trans.commit();
+        } else if (id == R.id.nav_bill_estimator) {
+            // replace whatever is on the mainContent screen with the BillEstimatorFragment
+            trans.replace(R.id.mainContent, new BillEstimatorFragment());
+            trans.addToBackStack(null);
+            trans.commit();
+        } else if (id == R.id.nav_reserve_table) {
+            // replace whatever is on the mainContent screen with the TableReserveFragment
+            trans.replace(R.id.mainContent, new TableReserveFragment());
             trans.addToBackStack(null);
             trans.commit();
         }
         else if (id == R.id.nav_build_a_frank) {
+            // replace whatever is on the mainContent screen with the BuildAFrankFragment
             trans.replace(R.id.mainContent, new BuildAFrankFragment());
+            trans.addToBackStack(null);
+            trans.commit();
+        } else if (id == R.id.nav_contact) {
+            // replace whatever is on the mainContent screen with the ContactFragment
+            trans.replace(R.id.mainContent, new ContactFragment());
             trans.addToBackStack(null);
             trans.commit();
         }
