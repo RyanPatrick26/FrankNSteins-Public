@@ -8,10 +8,33 @@
             android:title="About Us" />
 
         <item
+            android:id="@+id/nav_menu"
+            android:icon="@drawable/steins_small"
+            android:title="Menu" />
+
+        <item
+            android:id="@+id/nav_bill_estimator"
+            android:icon="@drawable/steins_small"
+            android:title="Bill Estimator" />
+
+        <item
+            android:id="@+id/nav_reserve_table"
+            android:icon="@drawable/steins_small"
+            android:title="Reserve Table" />
+
+        <item
             android:id="@+id/nav_build_a_frank"
             android:icon="@drawable/hot_dog_icon"
             android:title="Build-A-Frank" />
-
     </group>
+
+    <item android:title="More">
+        <menu>
+            <item
+                android:id="@+id/nav_contact"
+                android:icon="@drawable/hot_dog_icon"
+                android:title="Contact Us" />
+        </menu>
+    </item>
 
 </menu>
