@@ -142,6 +142,8 @@ public class MainFragment extends Fragment {
     public View.OnClickListener menuButtonListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            // Create the instantiate the fragment manager
+            fragMan = getActivity().getSupportFragmentManager();
             // Create the fragment transaction
             FragmentTransaction fragTrans = fragMan.beginTransaction();
 
