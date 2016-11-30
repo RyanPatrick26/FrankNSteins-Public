@@ -123,6 +123,18 @@
         <item>Alchol Free Frankweiser</item>
     </string-array>
 
+    <string-array name="non_alc_item_descriptions">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
     <!-- Array to hold the String values for the Non-Alcoholic Prices -->
     <string-array name="non_alc_item_prices">
         <item>2.50</item>

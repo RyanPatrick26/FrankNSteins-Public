@@ -32,17 +32,14 @@ public class MenuListFragment extends Fragment {
     private String[] frankItemNames;
     private String[] frankItemDescriptions;
     private String[] frankItemPrices;
-    private int[] frankImageIds;
 
     private String[] steinItemNames;
     private String[] steinItemDescriptions;
     private String[] steinItemPrices;
-    private int[] steinImageIds;
 
     private String[] nonAlcItemNames;
     private String[] nonAlcItemDescriptions;
     private String[] nonAlcItemPrices;
-    private String[] nonAlcImageIds;
 
     private OnFragmentInteractionListener mListener;
 
@@ -84,18 +81,30 @@ public class MenuListFragment extends Fragment {
 
         ListView list = (ListView)view.findViewById(R.id.menu_content);
 
+        frankItemNames = getResources().getStringArray(R.array.frank_item_names);
+        frankItemDescriptions  =getResources().getStringArray(R.array.frank_item_descriptions);
+        frankItemPrices = getResources().getStringArray(R.array.frank_item_prices);
+
+        steinItemNames = getResources().getStringArray(R.array.stein_item_names);
+        steinItemDescriptions = getResources().getStringArray(R.array.stein_item_descriptions);
+        steinItemPrices = getResources().getStringArray(R.array.stein_item_prices);
+
+        nonAlcItemNames = getResources().getStringArray(R.array.non_alc_item_names);
+        nonAlcItemDescriptions = getResources().getStringArray(R.array.non_alc_item_descriptions);
+        nonAlcItemPrices = getResources().getStringArray(R.array.non_alc_item_prices);
+
         if(mParam1 != null){
             TextView titleTextView = (TextView)view.findViewById(R.id.title_text_view);
             titleTextView.setText(mParam1);
-            MenuItemAdapter adapter = null;
+            MenuItemAdapter adapter;
             if(position == 0){
-                adapter = new MenuItemAdapter(getActivity());
+                adapter = new MenuItemAdapter(getActivity(), frankItemNames, frankItemDescriptions, frankItemPrices);
             }
             else if(position == 1){
-                adapter = new MenuItemAdapter(getActivity());
+                adapter = new MenuItemAdapter(getActivity(), steinItemNames, steinItemDescriptions, steinItemPrices);
             }
             else{
-                adapter = new MenuItemAdapter(getActivity());
+                adapter = new MenuItemAdapter(getActivity(), nonAlcItemNames, nonAlcItemDescriptions, nonAlcItemPrices);
             }
             list.setAdapter(adapter);
         }

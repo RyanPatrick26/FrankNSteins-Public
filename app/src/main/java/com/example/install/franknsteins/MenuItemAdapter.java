@@ -16,39 +16,28 @@ public class MenuItemAdapter extends ArrayAdapter<String> {
     private final String[] itemName;
     private final String[] itemDescription;
     private final String[] itemPrice;
-    private final int imgId;
 
-    public MenuItemAdapter(Activity context, String[] itemName, String[] itemDescription, String[] itemPrice, int imgId){
+    public MenuItemAdapter(Activity context, String[] itemName, String[] itemDescription, String[] itemPrice){
         super(context, R.layout.menu_item, itemName);
         this.context = context;
         this.itemName = itemName;
         this.itemDescription = itemDescription;
         this.itemPrice = itemPrice;
-        this.imgId = imgId;
-    }
-
-    public MenuItemAdapter(Activity context){
-        super(context, R.layout.menu_item);
-        this.context = context;
-        this.itemName = new String[]{""};
-        this.itemDescription = new String[]{""};
-        this.itemPrice = new String[]{""};
-        this.imgId = 0;
-
     }
 
     public View getView(int position, View view, ViewGroup parent){
         LayoutInflater inflater = context.getLayoutInflater();
         View menuView = inflater.inflate(R.layout.menu_item, null, true);
         TextView itemTextView = (TextView)menuView.findViewById(R.id.menu_selection);
-        TextView itemDescriptionTextView = (TextView)menuView.findViewById(R.id.description_text);
-        TextView itemPriceTextView = (TextView) menuView.findViewById(R.id.price);
-        ImageView itemImage = (ImageView)menuView.findViewById(R.id.item_image);
-
         itemTextView.setText(itemName[position]);
-        itemDescriptionTextView.setText(itemDescription[position]);
-        itemPriceTextView.setText(itemPrice[position]);
-        itemImage.setImageResource(imgId);
+
+        if(itemDescription != null){
+            TextView itemDescriptionTextView = (TextView)menuView.findViewById(R.id.description_text);
+            itemDescriptionTextView.setText(itemDescription[position]);
+        }
+
+        TextView itemPriceTextView = (TextView) menuView.findViewById(R.id.price);
+        itemPriceTextView.setText("$" + itemPrice[position]);
 
         TextView addButton = (TextView)menuView.findViewById(R.id.add_button);
 
