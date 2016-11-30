@@ -18,7 +18,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Medium Text"
-                android:id="@+id/textView" />
+                android:id="@+id/dateTimeText" />
 
             <DatePicker
                 android:layout_width="match_parent"
@@ -34,8 +34,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="New Button"
-                android:id="@+id/button" />
+                android:id="@+id/dateTimeButton" />
         </LinearLayout>
     </ScrollView>
-    
+
 </LinearLayout>

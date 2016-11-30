@@ -1,6 +1,8 @@
 package com.example.install.franknsteins;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,9 +11,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.TimePicker;
 
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 
 /**
@@ -32,13 +38,10 @@ public class TableReserveFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    Calendar calendar = Calendar.getInstance();
-    // get the current date and time
-    int beginningYear = calendar.get(Calendar.YEAR);
-    int beginningMonth = calendar.get(Calendar.MONTH);
-    int beginningDay = calendar.get(Calendar.DAY_OF_MONTH);
-    int beginningHour = calendar.get(Calendar.HOUR_OF_DAY);
-    int beginningMinute = calendar.get(Calendar.MINUTE);
+    // create date and time picker variables
+    DatePicker datePicker;
+    TimePicker timePicker;
+    Button dateTimeButton;
 
     private OnFragmentInteractionListener mListener;
 
@@ -78,7 +81,7 @@ public class TableReserveFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_table_reserve, container, false);
-        // Build the table reservation system
+        datePicker = (DatePicker) view.findViewById(R.id.datePicker);
 
 
 
