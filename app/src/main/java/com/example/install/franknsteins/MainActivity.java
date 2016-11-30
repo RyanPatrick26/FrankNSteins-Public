@@ -122,8 +122,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             trans.addToBackStack(null);
             trans.commit();
         }
-
-        if (id == R.id.nav_menu) {
+        else if (id == R.id.nav_menu) {
             trans.replace(R.id.mainContent, new MenuFragment());
             trans.addToBackStack(null);
             trans.commit();
@@ -137,6 +136,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onFragmentInteraction(Uri uri) {
-        
+
     }
 }
