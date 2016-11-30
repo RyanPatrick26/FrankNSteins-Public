@@ -92,12 +92,14 @@
                 android:id="@+id/menuButton"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/frankTextColor"
-                android:background="@color/buttonColor"
-                android:layout_marginTop="10dp"
+                android:textColor="@color/frankBackgroundColor"
+                android:background="@color/frankTextColor"
+                android:layout_marginTop="5dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="5dp"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
 
             <Button
                 android:layout_width="match_parent"
@@ -106,12 +108,14 @@
                 android:id="@+id/contactButton"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/frankTextColor"
-                android:background="@color/buttonColor"
-                android:layout_marginTop="10dp"
+                android:textColor="@color/frankBackgroundColor"
+                android:background="@color/frankTextColor"
+                android:layout_marginTop="5dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="5dp"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
 
             <Button
                 android:layout_width="match_parent"
@@ -120,12 +124,14 @@
                 android:id="@+id/reserveTableButton"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/frankTextColor"
-                android:background="@color/buttonColor"
-                android:layout_marginTop="10dp"
+                android:textColor="@color/frankBackgroundColor"
+                android:background="@color/frankTextColor"
+                android:layout_marginTop="5dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="5dp"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
 
             <Button
                 android:layout_width="match_parent"
@@ -134,12 +140,14 @@
                 android:id="@+id/billEstimatorButton"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/frankTextColor"
-                android:background="@color/buttonColor"
-                android:layout_marginTop="10dp"
+                android:textColor="@color/frankBackgroundColor"
+                android:background="@color/frankTextColor"
+                android:layout_marginTop="5dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="5dp"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
 
             <Button
                 android:layout_width="match_parent"
@@ -148,12 +156,14 @@
                 android:id="@+id/buildafrankButton"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/frankTextColor"
-                android:background="@color/buttonColor"
-                android:layout_marginTop="10dp"
+                android:textColor="@color/frankBackgroundColor"
+                android:background="@color/frankTextColor"
+                android:layout_marginTop="5dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
         </LinearLayout>
     </ScrollView>
 
