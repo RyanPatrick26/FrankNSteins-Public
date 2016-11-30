@@ -1,12 +1,17 @@
 package com.example.install.franknsteins;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
+
+import java.util.Calendar;
 
 
 /**
@@ -66,6 +71,14 @@ public class TableReserveFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_table_reserve, container, false);
         // Build the table reservation system
+        Calendar calendar = Calendar.getInstance();
+        // get the current date and time
+        int beginningYear = calendar.get(Calendar.YEAR);
+        int beginningMonth = calendar.get(Calendar.MONTH);
+        int beginningDay = calendar.get(Calendar.DAY_OF_MONTH);
+        int beginningHour = calendar.get(Calendar.HOUR_OF_DAY);
+        int beginningMinute = calendar.get(Calendar.MINUTE);
+
 
         return view;
     }
@@ -108,4 +121,13 @@ public class TableReserveFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+    class BeginDatePicker extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+        }
+    }
+
 }
