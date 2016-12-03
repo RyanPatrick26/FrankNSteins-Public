@@ -2,11 +2,8 @@ package com.example.install.franknsteins;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -19,6 +16,7 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
         BuildAFrankFragment.OnFragmentInteractionListener,
         MainFragment.OnFragmentInteractionListener,
+        MenuListFragment.OnFragmentInteractionListener,
         BillEstimatorFragment.OnFragmentInteractionListener,
         ContactFragment.OnFragmentInteractionListener,
         MenuFragment.OnFragmentInteractionListener,
@@ -124,11 +122,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             trans.addToBackStack(null);
             trans.commit();
         }
+        else if (id == R.id.nav_menu) {
+            trans.replace(R.id.mainContent, new MenuFragment());
+            trans.addToBackStack(null);
+            trans.commit();
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+    @Override
     public void onFragmentInteraction(Uri uri) {
 
     }
