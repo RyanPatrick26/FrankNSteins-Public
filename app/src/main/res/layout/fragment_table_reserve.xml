@@ -46,6 +46,15 @@
                 android:amPmBackgroundColor="@color/hotdog_color"
                 android:amPmTextColor="@color/frankTextColor" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Time test"
+                android:id="@+id/timeTest"
+                android:gravity="center_horizontal"
+                android:textSize="20sp" />
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

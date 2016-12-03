@@ -1,10 +1,12 @@
 package com.example.install.franknsteins;
 
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -17,6 +19,7 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -45,12 +48,17 @@ public class TableReserveFragment extends Fragment {
 
     // Create the test test file
     TextView testView;
+    TextView timeTest;
 
     // Create the time picker
     TimePicker timePicker;
 
     // create the bookTable button
     Button bookTableButton;
+
+    // ceate the time variables
+    private int hour;
+    private int minute;
 
     private OnFragmentInteractionListener mListener;
 
@@ -95,14 +103,15 @@ public class TableReserveFragment extends Fragment {
         tableCalendarView = (CalendarView) view.findViewById(R.id.tableCalendarView);
         // link the textview to the test one in the layout file
         testView = (TextView) view.findViewById(R.id.testView);
+        timeTest = (TextView) view.findViewById(R.id.timeTest);
         // link the timepicker to the one in the layout file
-
+        timePicker = (TimePicker) view.findViewById(R.id.timePicker);
+        hour = timePicker.getHour();
+        minute = timePicker.getMinute();
+        timeTest.setText("Time: "+hour+":"+minute);
         // link the bookTable button to the one in the layout file
         bookTableButton = (Button) view.findViewById(R.id.bookTableButton);
         // create the date selection listener for the calendar
-        /**
-         * Listens for changes on the selected date then performs the method below
-         */
         tableCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             /**
              *
@@ -120,9 +129,34 @@ public class TableReserveFragment extends Fragment {
             }
         });
 
-        //
+        // create the listener for the time picker
+        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            /**
+             *
+             *
+             * @author Nicholas Allaire
+             * @param timeView
+             * @param hourOfDay
+             * @param minute
+             */
+            @Override
+            public void onTimeChanged(TimePicker timeView, int hourOfDay, int minute) {
+                timeTest.setText("Time: "+hourOfDay+":"+minute);
+            }
+        });
 
+        bookTableButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * 
+             *
+             * @author Nicholas Allaire
+             * @param v
+             */
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
 
         return view;
     }
