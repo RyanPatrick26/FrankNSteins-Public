@@ -38,11 +38,6 @@ public class TableReserveFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    // create date and time picker variables
-    DatePicker datePicker;
-    TimePicker timePicker;
-    Button dateTimeButton;
-
     private OnFragmentInteractionListener mListener;
 
     public TableReserveFragment() {
@@ -81,7 +76,6 @@ public class TableReserveFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_table_reserve, container, false);
-        datePicker = (DatePicker) view.findViewById(R.id.datePicker);
 
 
 

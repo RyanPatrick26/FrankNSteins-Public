@@ -6,36 +6,19 @@
     android:background="@color/frankBackgroundColor"
     android:orientation="vertical">
 
-    <ScrollView
+    <CalendarView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
-                android:id="@+id/dateTimeText" />
+        android:layout_height="wrap_content"
+        android:id="@+id/calendarView"
+        android:background="@color/hotdog_color"/>
 
-            <DatePicker
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/datePicker" />
-
-            <TimePicker
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/timePicker" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="New Button"
-                android:id="@+id/dateTimeButton" />
-        </LinearLayout>
-    </ScrollView>
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/textView"
+        android:gravity="center"
+        android:textColor="@color/frankTextColor"
+        android:textSize="30sp" />
 </LinearLayout>
