@@ -18,6 +18,7 @@ import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -46,8 +47,7 @@ public class TableReserveFragment extends Fragment {
     // Create the calendarView
     CalendarView tableCalendarView;
 
-    // Create the test test file
-    TextView testView;
+    // Create the test view
     TextView timeTest;
 
     // Create the time picker
@@ -102,10 +102,10 @@ public class TableReserveFragment extends Fragment {
         // link the calendarView to the one in the layout file
         tableCalendarView = (CalendarView) view.findViewById(R.id.tableCalendarView);
         // link the textview to the test one in the layout file
-        testView = (TextView) view.findViewById(R.id.testView);
         timeTest = (TextView) view.findViewById(R.id.timeTest);
         // link the timepicker to the one in the layout file
         timePicker = (TimePicker) view.findViewById(R.id.timePicker);
+        timePicker.is24HourView();
         hour = timePicker.getHour();
         minute = timePicker.getMinute();
         timeTest.setText("Time: "+hour+":"+minute);
@@ -124,8 +124,7 @@ public class TableReserveFragment extends Fragment {
              */
             @Override
             public void onSelectedDayChange(CalendarView calendarView, int year, int month, int dayOfMonth) {
-                testView.setText("Selected date (mm-dd-yyyy):\n"
-                        +month+"-"+dayOfMonth+"-"+year);
+                Toast.makeText(getActivity(),month+"/"+dayOfMonth+"/"+year+" selected",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -141,13 +140,14 @@ public class TableReserveFragment extends Fragment {
              */
             @Override
             public void onTimeChanged(TimePicker timeView, int hourOfDay, int minute) {
-                timeTest.setText("Time: "+hourOfDay+":"+minute);
+                timeTest.setText("Time selected: "+hourOfDay+":"+minute);
+
             }
         });
 
         bookTableButton.setOnClickListener(new View.OnClickListener() {
             /**
-             * 
+             *
              *
              * @author Nicholas Allaire
              * @param v
