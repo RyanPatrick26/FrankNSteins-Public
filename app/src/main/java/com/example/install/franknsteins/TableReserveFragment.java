@@ -46,6 +46,12 @@ public class TableReserveFragment extends Fragment {
     // Create the test test file
     TextView testView;
 
+    // Create the time picker
+    TimePicker timePicker;
+
+    // create the bookTable button
+    Button bookTableButton;
+
     private OnFragmentInteractionListener mListener;
 
     public TableReserveFragment() {
@@ -89,14 +95,32 @@ public class TableReserveFragment extends Fragment {
         tableCalendarView = (CalendarView) view.findViewById(R.id.tableCalendarView);
         // link the textview to the test one in the layout file
         testView = (TextView) view.findViewById(R.id.testView);
+        // link the timepicker to the one in the layout file
+
+        // link the bookTable button to the one in the layout file
+        bookTableButton = (Button) view.findViewById(R.id.bookTableButton);
         // create the date selection listener for the calendar
+        /**
+         * Listens for changes on the selected date then performs the method below
+         */
         tableCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            /**
+             *
+             *
+             * @author Nicholas Allaire
+             * @param calendarView
+             * @param year
+             * @param month
+             * @param dayOfMonth
+             */
             @Override
             public void onSelectedDayChange(CalendarView calendarView, int year, int month, int dayOfMonth) {
                 testView.setText("Selected date (mm-dd-yyyy):\n"
                         +month+"-"+dayOfMonth+"-"+year);
             }
         });
+
+        //
 
 
 
