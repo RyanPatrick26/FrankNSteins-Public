@@ -89,7 +89,14 @@ public class TableReserveFragment extends Fragment {
         tableCalendarView = (CalendarView) view.findViewById(R.id.tableCalendarView);
         // link the textview to the test one in the layout file
         testView = (TextView) view.findViewById(R.id.testView);
-        // create the date selection listener
+        // create the date selection listener for the calendar
+        tableCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView calendarView, int year, int month, int dayOfMonth) {
+                testView.setText("Selected date (mm-dd-yyyy):\n"
+                        +month+"-"+dayOfMonth+"-"+year);
+            }
+        });
 
 
 
