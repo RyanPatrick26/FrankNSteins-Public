@@ -12,7 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.DatePicker;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
@@ -37,6 +39,12 @@ public class TableReserveFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    // Create the calendarView
+    CalendarView tableCalendarView;
+
+    // Create the test test file
+    TextView testView;
 
     private OnFragmentInteractionListener mListener;
 
@@ -76,6 +84,12 @@ public class TableReserveFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_table_reserve, container, false);
+
+        // link the calendarView to the one in the layout file
+        tableCalendarView = (CalendarView) view.findViewById(R.id.tableCalendarView);
+        // link the textview to the test one in the layout file
+        testView = (TextView) view.findViewById(R.id.testView);
+        // create the date selection listener
 
 
 
