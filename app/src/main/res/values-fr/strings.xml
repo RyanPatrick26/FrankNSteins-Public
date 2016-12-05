@@ -22,4 +22,5 @@
     <string name="shareButtonText">PARTAGEZ AVEC UN AMI</string>
     <string name="bookTableButton">Réservez votre table</string>
     <string name="tableReserveIntroText">Sélectionnez une date, une heure et appuyez sur le bouton \'Réservez Votre Table\' pour réserver votre table!</string>
+    <string name="title_activity_settings">Paramêtres</string>
 </resources>
