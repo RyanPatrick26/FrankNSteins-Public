@@ -24,7 +24,7 @@
                 you like it topped with bacon and hash browns. For those
                 of you with a sweet tooth, try it with delicious maple
                 syrup.</item>
-        <item>The spirit of French Canada is alive and well with this Canadians
+        <item>The spirit of French Canada is alive and well with this Canadian
                 classic. The Frankophone combines the greatness of the Frank
                 with the patriotic dish known as poutine. This Frank is topped
                 with gravy and cheese curds imported from Quebec.</item>
@@ -46,7 +46,8 @@
                 with a small potato salad. Experience the taste of Oktoberfest!</item>
         <item>A Frank with a Scottish twist. The Frank Wallace comes topped with a traditional
                 Scottish haggis: a pudding-like topping of sheep\’s pluck, minced with onion,
-                oatmeal, suet, spices, and salt.</item>
+                oatmeal, suet, spices, and salt. They can take your land, but they\'ll never take
+                your Frank!</item>
     </string-array>
 
     <!-- Array to hold the String values for the Frank Prices -->
@@ -120,7 +121,7 @@
         <item>Lemonade</item>
         <item>Apple Juice</item>
         <item>Coffee</item>
-        <item>Alchol Free Frankweiser</item>
+        <item>Alcohol Free Frankweiser</item>
     </string-array>
 
     <string-array name="non_alc_item_descriptions">

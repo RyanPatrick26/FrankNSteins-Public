@@ -8,7 +8,7 @@
     <string name="mainDescriptionText2">Nous accueillons également quelques-uns des plus beaux Steins sur le robinet ainsi que de nombreuses bières délicieuses sur bouteille pour nos clients de 19 ans plus.</string>
     <string name="mainSubtitleText">Franks gastronomiques \net\n Steins délicieux!</string>
     <string name="mainscreenFeaturesText">S\'il vous plaît profiter de notre application. Avec lui, vous pouvez consulter notre menu, entrer en contact avec nous, faire une réservation de table, obtenir une estimation sur votre facture et même construire votre propre Frank personnalisé! Découvrez quelques-unes des fonctionnalités de l\'application ci-dessous:</string>
-    <string name="menuButtonText" translatable="false">MENU</string>
+    <string name="menuButtonText" translatable="false">LE MENU</string>
     <string name="reserveTableButtonText">RÉSERVEZ VOTRE TABLE</string>
     <string name="billEstimatorText">ESTIMATION DE FACTURE</string>
     <string name="addToContactButtonText">AJOUTER AUX CONTACTS</string>
@@ -23,4 +23,5 @@
     <string name="bookTableButton">Réservez votre table</string>
     <string name="tableReserveIntroText">Sélectionnez une date, une heure et appuyez sur le bouton \'Réservez Votre Table\' pour réserver votre table!</string>
     <string name="title_activity_settings">Paramêtres</string>
+    <string name="pref_language_summary"></string>
 </resources>

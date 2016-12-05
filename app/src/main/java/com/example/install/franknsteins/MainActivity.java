@@ -1,5 +1,6 @@
 package com.example.install.franknsteins;
 
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -10,6 +11,8 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -33,8 +36,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     // Create a fragment manager
     FragmentManager fragMan = getSupportFragmentManager();
 
-    //create the language string
-    private String language = "";
+    // string for language
+    private String language;
+
 
 
     @Override
@@ -47,23 +51,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         settings.registerOnSharedPreferenceChangeListener(new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                Toast.makeText(getBaseContext(),sharedPreferences.getString(key,"")+" from "+key+" selected.",
-                        Toast.LENGTH_SHORT).show();
-                    String language = sharedPreferences.toString();
-                    Locale locale = new Locale(language);
-                    Locale.setDefault(locale);
-                    Configuration config = new Configuration();
-                    config.locale = locale;
-                    getBaseContext().getResources().updateConfiguration(config,
-                            getBaseContext().getResources().getDisplayMetrics());
-                    Intent intent = getIntent();
-                    finish();
-                    startActivity(intent);
+                language = sharedPreferences.getString(key,"en");
+                if (language == "en") {
+                    Toast.makeText(getBaseContext(),"Language set to English",
+                            Toast.LENGTH_SHORT).show();
+                } else if (language == "fr") {
+                    Toast.makeText(getBaseContext(),"Langue française choisie",
+                            Toast.LENGTH_SHORT).show();
+                }
+                String language = sharedPreferences.getString(key,"en");
+                Locale locale = new Locale(language);
+                Locale.setDefault(locale);
+                Configuration config = new Configuration();
+                config.locale = locale;
+                getBaseContext().getResources().updateConfiguration(config,
+                        getBaseContext().getResources().getDisplayMetrics());
+
+                Intent intent = getIntent();
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
+
         });
 
         // Replace the current activity with the Fragment and create a fragment transaction
         FragmentTransaction fragTran = fragMan.beginTransaction();
+        fragTran.addToBackStack(null);
         fragTran.replace(R.id.mainContent, new MainFragment());
         fragTran.commit();
 
