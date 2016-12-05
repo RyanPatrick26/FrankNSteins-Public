@@ -27,6 +27,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 
 /**
@@ -203,17 +204,30 @@ public class TableReserveFragment extends Fragment {
                         startActivity(intent);
                     } else {
                         // if not, display a snackbar notifying them of this issue
-                        Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                                "No installed software to complete process.", Snackbar.LENGTH_SHORT);
-                        snackbar.show();
+                        if (!Locale.getDefault().getLanguage().contentEquals("fr")) {
+                            Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                                    "No installed software to complete process.", Snackbar.LENGTH_SHORT);
+                            snackbar.show();
+                        } else {
+                            Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                                    "Aucun logiciel installé pour terminer le processus.", Snackbar.LENGTH_SHORT);
+                            snackbar.show();
+                        }
+
                     }
                     // Display a confirmation toast.
                     Toast.makeText(getActivity(),"Reservation booked. Thanks! Let's mark it in your calendar",Toast.LENGTH_LONG).show();
 
                 } else {
-                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                            "No date selected. Please select a date from the calendar and then book your table.", Snackbar.LENGTH_LONG);
-                    snackbar.show();
+                    if (!Locale.getDefault().getLanguage().contentEquals("fr")) {
+                        Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                                "No date selected. Please select a date from the calendar and then book your table.", Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    } else {
+                        Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                                "Aucune date sélectionnée. Sélectionne une date dans le calendrier et réserve votre table.", Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    }
                 }
             }
         });

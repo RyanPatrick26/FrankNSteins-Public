@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.util.Locale;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -172,9 +174,15 @@ public class ContactFragment extends Fragment {
                 startActivity(intent);
             } else {
                 // if they don't have an email client, display a snackbar
-                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                        "No installed email client to complete process.", Snackbar.LENGTH_SHORT);
-                snackbar.show();
+                if (!Locale.getDefault().getLanguage().contentEquals("fr")) {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "No installed software to complete process.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "Aucun logiciel installé pour terminer le processus.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }
             }
         }
     };
@@ -206,9 +214,15 @@ public class ContactFragment extends Fragment {
                 startActivity(intent);
             } else {
                 // if they don't have the ability to add contacts on their device, display a snackbar
-                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                        "No installed software to complete the task.", Snackbar.LENGTH_SHORT);
-                snackbar.show();
+                if (!Locale.getDefault().getLanguage().contentEquals("fr")) {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "No installed software to complete process.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "Aucun logiciel installé pour terminer le processus.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }
             }
         }
     };
@@ -235,8 +249,15 @@ public class ContactFragment extends Fragment {
                 startActivity(intent);
             } else {
                 // if they don't have a maps software on their device, display a snackbar
-                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                        "No installed software to complete the task.", Snackbar.LENGTH_SHORT);
+                if (!Locale.getDefault().getLanguage().contentEquals("fr")) {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "No installed software to complete process.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "Aucun logiciel installé pour terminer le processus.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }
             }
         }
     };
@@ -263,9 +284,15 @@ public class ContactFragment extends Fragment {
             if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                 startActivity(intent);
             } else {
-                // if they don't have a web browser installed on their device, display a snackbar
-                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                        "No installed software to complete the task.", Snackbar.LENGTH_SHORT);
+                if (!Locale.getDefault().getLanguage().contentEquals("fr")) {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "No installed software to complete process.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "Aucun logiciel installé pour terminer le processus.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }
             }
         }
     };
@@ -294,9 +321,15 @@ public class ContactFragment extends Fragment {
                 startActivity(intent);
             } else {
                 // if the user does not have SMS, display a snackbar
-                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                        "No installed software to complete the task", Snackbar.LENGTH_SHORT);
-                snackbar.show();
+                if (!Locale.getDefault().getLanguage().contentEquals("fr")) {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "No installed software to complete process.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "Aucun logiciel installé pour terminer le processus.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }
             }
         }
     };
