@@ -1,17 +1,17 @@
 <resources>
-    <string name="app_name">FrankNSteins</string>
+    <string name="app_name" translatable="false">Frank \'N\' Steins</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings" translatable="false">Settings</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
     <string name="buildafrankButtonText">BUILD YOUR OWN FRANK</string>
-    <string name="billEstimatorButtonText">BILL ESTIMATOR</string>
-    <string name="reserveTableButtonText">RESERVE A TABLE</string>
-    <string name="contactButtonText">CONTACT US</string>
-    <string name="menuButtonText">MENU</string>
+    <string name="billEstimatorButtonText" translatable="false">BILL ESTIMATOR</string>
+    <string name="reserveTableButtonText" translatable="false">RESERVE A TABLE</string>
+    <string name="contactButtonText" translatable="false">CONTACT US</string>
+    <string name="menuButtonText" translatable="false">MENU</string>
 </resources>

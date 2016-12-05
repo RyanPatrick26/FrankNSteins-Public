@@ -87,42 +87,56 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        FragmentTransaction trans = fragMan.beginTransaction();
 
         // Check which nav item is selected and then perform the fragment transaction
         if (id == R.id.nav_about_us) {
             // replace whatever is on the mainContent screen with the MainFragment
+            FragmentTransaction trans = fragMan.beginTransaction();
+            trans.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             trans.replace(R.id.mainContent, new MainFragment());
             trans.addToBackStack(null);
             trans.commit();
         } else if (id == R.id.nav_menu) {
             // replace whatever is on the mainContent screen with the MenuFragment
+            FragmentTransaction trans = fragMan.beginTransaction();
+            trans.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             trans.replace(R.id.mainContent, new MenuFragment());
             trans.addToBackStack(null);
             trans.commit();
         } else if (id == R.id.nav_bill_estimator) {
             // replace whatever is on the mainContent screen with the BillEstimatorFragment
+            FragmentTransaction trans = fragMan.beginTransaction();
+            trans.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             trans.replace(R.id.mainContent, new BillEstimatorFragment());
             trans.addToBackStack(null);
             trans.commit();
         } else if (id == R.id.nav_reserve_table) {
             // replace whatever is on the mainContent screen with the TableReserveFragment
+            FragmentTransaction trans = fragMan.beginTransaction();
+            trans.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             trans.replace(R.id.mainContent, new TableReserveFragment());
             trans.addToBackStack(null);
             trans.commit();
         }
         else if (id == R.id.nav_build_a_frank) {
             // replace whatever is on the mainContent screen with the BuildAFrankFragment
+            FragmentTransaction trans = fragMan.beginTransaction();
+            trans.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             trans.replace(R.id.mainContent, new BuildAFrankFragment());
             trans.addToBackStack(null);
             trans.commit();
         } else if (id == R.id.nav_contact) {
             // replace whatever is on the mainContent screen with the ContactFragment
+            FragmentTransaction trans = fragMan.beginTransaction();
+            trans.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             trans.replace(R.id.mainContent, new ContactFragment());
             trans.addToBackStack(null);
             trans.commit();
         }
         else if (id == R.id.nav_menu) {
+            // replace whatever is on the mainContent screen with the MenuFragment
+            FragmentTransaction trans = fragMan.beginTransaction();
+            trans.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             trans.replace(R.id.mainContent, new MenuFragment());
             trans.addToBackStack(null);
             trans.commit();

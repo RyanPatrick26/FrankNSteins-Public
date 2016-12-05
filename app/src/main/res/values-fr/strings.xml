@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="billEstimatorButtonText"></string>
+    <string name="buildafrankButtonText">CONTRUIT VOTRE FRANK</string>
+</resources>
