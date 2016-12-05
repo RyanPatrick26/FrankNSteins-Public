@@ -136,7 +136,15 @@ public class BillEstimatorFragment extends Fragment {
                 MenuFragment.itemList.clear();
                 MenuFragment.priceList.clear();
 
+                billAmount = 0.0;
+                percent = 0.15;
+                totalAmount = 0.0;
+
                 list.setAdapter(adapter);
+
+                tipLabel.setText(percentFormat.format(percent));
+
+                seekBar.setProgress(15);
 
                 beforeTipTextView.setText(currencyFormat.format(billAmount));
                 tipTextView.setText(currencyFormat.format(billAmount*(percent)));
