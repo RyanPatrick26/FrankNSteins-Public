@@ -44,32 +44,41 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         final SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
 
+        language = settings.getString("lang","en");
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
+
+        setContentView(R.layout.activity_main);
+
         settings.registerOnSharedPreferenceChangeListener(new SharedPreferences.OnSharedPreferenceChangeListener() {
+            /**
+             * 
+             *
+             * @author Nicholas Allaire
+             * @param sharedPreferences
+             * @param key
+             */
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
                 language = sharedPreferences.getString(key,"en");
-                if (language == "en") {
-                    Toast.makeText(getBaseContext(),"Language set to English",
-                            Toast.LENGTH_SHORT).show();
-                } else if (language == "fr") {
-                    Toast.makeText(getBaseContext(),"Langue française choisie",
-                            Toast.LENGTH_SHORT).show();
-                }
-                String language = sharedPreferences.getString(key,"en");
                 Locale locale = new Locale(language);
                 Locale.setDefault(locale);
                 Configuration config = new Configuration();
                 config.locale = locale;
                 getBaseContext().getResources().updateConfiguration(config,
                         getBaseContext().getResources().getDisplayMetrics());
-
                 Intent intent = getIntent();
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                Toast.makeText(getBaseContext(),language+" selected.",
+                        Toast.LENGTH_SHORT).show();
             }
 
         });
