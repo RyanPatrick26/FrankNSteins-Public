@@ -118,7 +118,7 @@ public class TableReserveFragment extends Fragment {
         timePicker.is24HourView();
         timeHour = timePicker.getHour();
         timeMinute = timePicker.getMinute();
-        timeTest.setText("Time: "+timeHour+":"+timeMinute);
+        timeTest.setText("Time selected: "+timeHour+":"+timeMinute);
         // link the bookTable button to the one in the layout file
         bookTableButton = (Button) view.findViewById(R.id.bookTableButton);
         // create the date selection listener for the calendar
@@ -205,7 +205,7 @@ public class TableReserveFragment extends Fragment {
 
                 } else {
                     Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                            "No date selected. Please select a date and then book your table.", Snackbar.LENGTH_LONG);
+                            "No date selected. Please select a date from the calendar and then book your table.", Snackbar.LENGTH_LONG);
                     snackbar.show();
                 }
             }

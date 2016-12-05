@@ -44,13 +44,22 @@
                 android:id="@+id/timeTest"
                 android:gravity="center_horizontal"
                 android:textSize="20sp"
-                android:textColor="@color/frankTextColor" />
+                android:textColor="@color/frankTextColor"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="New Button"
-                android:id="@+id/bookTableButton" />
+                android:text="Book Table"
+                android:id="@+id/bookTableButton"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/frankBackgroundColor"
+                android:background="@color/frankTextColor"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp" />
 
 
         </LinearLayout>
