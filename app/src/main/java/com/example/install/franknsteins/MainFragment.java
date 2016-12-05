@@ -37,6 +37,7 @@ public class MainFragment extends Fragment {
     private Button billEstimatorButton;
     private Button buildaFrankButton;
 
+    // create the fragment listener
     private OnFragmentInteractionListener mListener;
 
     // Create the fragment manager
