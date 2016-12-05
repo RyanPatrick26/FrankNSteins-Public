@@ -118,7 +118,7 @@ public class TableReserveFragment extends Fragment {
         timePicker.is24HourView();
         timeHour = timePicker.getHour();
         timeMinute = timePicker.getMinute();
-        timeTest.setText("Time selected (24hr clock): "+timeHour+":"+timeMinute);
+        timeTest.setText("(24hr): "+timeHour+":"+timeMinute);
         // link the bookTable button to the one in the layout file
         bookTableButton = (Button) view.findViewById(R.id.bookTableButton);
         // create the date selection listener for the calendar
@@ -160,7 +160,7 @@ public class TableReserveFragment extends Fragment {
              */
             @Override
             public void onTimeChanged(TimePicker timeView, int hourOfDay, int minute) {
-                timeTest.setText("Time selected (24hr clock): "+hourOfDay+":"+minute);
+                timeTest.setText("(24hr): "+hourOfDay+":"+minute);
                 timeHour = hourOfDay;
                 timeMinute = minute;
             }

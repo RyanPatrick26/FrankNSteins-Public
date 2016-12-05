@@ -11,4 +11,15 @@
     <string name="menuButtonText" translatable="false">MENU</string>
     <string name="reserveTableButtonText">RÉSERVEZ VOTRE TABLE</string>
     <string name="billEstimatorText">ESTIMATION DE FACTURE</string>
+    <string name="addToContactButtonText">AJOUTER AUX CONTACTS</string>
+    <string name="additionalInfoText">Autres fonctionnalités de contact:</string>
+    <string name="app_name">Frank \'N\' Steins</string>
+    <string name="contactInfoText">Frank \'N\' Steins Restaurant\n1178 Tecumseh Road W, Windsor\n(519) - 780 3445\nfranknsteins@gmail.com\nwww.franknsteins.ca</string>
+    <string name="contactTitleText">Contactez nous!</string>
+    <string name="emailButtonText">Envoyez-nous un email</string>
+    <string name="findLocationButtonText">TROUVER L\'EMPLACEMENT</string>
+    <string name="goToWebsiteButtonText">   Accéder au site web</string>
+    <string name="shareButtonText">PARTAGEZ AVEC UN AMI</string>
+    <string name="bookTableButton">Réservez votre table</string>
+    <string name="tableReserveIntroText">Sélectionnez une date, une heure et appuyez sur le bouton \'Réservez Votre Table\' pour réserver votre table!</string>
 </resources>
