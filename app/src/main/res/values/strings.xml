@@ -17,4 +17,6 @@
     <string name="bill_estimator_title">Bill Estimator</string>
     <string name="tip_text_view">Tip Amount</string>
     <string name="total_amount">Total</string>
+    <string name="clear_button_text">Clear Order</string>
+    <string name="before_tip">Total Before Tip</string>
 </resources>

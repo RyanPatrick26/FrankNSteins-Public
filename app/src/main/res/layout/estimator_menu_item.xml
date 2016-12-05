@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_text_view"
+            android:textColor="@color/abc_input_method_navigation_guard"
+            android:textSize="@dimen/sub_menu_text_size"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/price_text_view"
+            android:textColor="@color/abc_input_method_navigation_guard"
+            android:textSize="@dimen/sub_menu_text_size"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/remove_button"
+        android:textColor="@color/abc_input_method_navigation_guard"
+        android:textSize="@dimen/sub_menu_text_size"
+        android:text="-"
+        android:gravity="center"
+        android:layout_gravity="center" />
+
+</LinearLayout>

@@ -113,7 +113,7 @@ public class MenuListFragment extends Fragment {
             list.setAdapter(adapter);
         }
 
-        Button billEstimatorButton = (Button)view.findViewById(R.id.billEstimatorButton);
+        Button billEstimatorButton = (Button)view.findViewById(R.id.estimate_bill_button);
         billEstimatorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

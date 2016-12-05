@@ -50,12 +50,10 @@ public class MenuItemAdapter extends ArrayAdapter<String> {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                itemList.add((String) itemTextView.getText());
-                String itemPriceString = (String)itemPriceTextView.getText().subSequence(1, 5);
-                priceList.add(Double.parseDouble(itemPriceString));
+                String itemPriceString = (String)itemPriceTextView.getText().subSequence(1, (itemPriceTextView.getText().length()));
 
-                MenuFragment.itemList.addAll(itemList);
-                MenuFragment.priceList.addAll(priceList);
+                MenuFragment.itemList.add((String)itemTextView.getText());
+                MenuFragment.priceList.add(Double.parseDouble(itemPriceString));
 
                 Snackbar snackbar = Snackbar.make(parent, "Added to your order", Snackbar.LENGTH_SHORT);
                 snackbar.show();
