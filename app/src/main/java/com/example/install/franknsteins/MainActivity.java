@@ -57,33 +57,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         setContentView(R.layout.activity_main);
 
-        settings.registerOnSharedPreferenceChangeListener(new SharedPreferences.OnSharedPreferenceChangeListener() {
-            /**
-             * When the user selects a different language, the application will change the device's
-             * location settings to display the app in either French of English
-             *
-             * @author Nicholas Allaire
-             * @param sharedPreferences
-             * @param key
-             */
-            @Override
-            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                language = sharedPreferences.getString(key,"en");
-                Locale locale = new Locale(language);
-                Locale.setDefault(locale);
-                Configuration config = new Configuration();
-                config.locale = locale;
-                getBaseContext().getResources().updateConfiguration(config,
-                        getBaseContext().getResources().getDisplayMetrics());
-                Intent intent = getIntent();
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                Toast.makeText(getBaseContext(),language+" selected.",
-                        Toast.LENGTH_SHORT).show();
-            }
-
-        });
-
         // Replace the current activity with the Fragment and create a fragment transaction
         FragmentTransaction fragTran = fragMan.beginTransaction();
         fragTran.replace(R.id.mainContent, new MainFragment());
@@ -111,6 +84,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
     }
 
     @Override

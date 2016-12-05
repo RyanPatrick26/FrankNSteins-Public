@@ -23,5 +23,7 @@
     <string name="bookTableButton">Réservez votre table</string>
     <string name="tableReserveIntroText">Sélectionnez une date, une heure et appuyez sur le bouton \'Réservez Votre Table\' pour réserver votre table!</string>
     <string name="title_activity_settings">Paramêtres</string>
-    <string name="pref_language_summary"></string>
+    <string name="pref_language_summary">Modification de la langue de l\'application</string>
+    <string name="pref_language_title" translatable="false">Langue</string>
+    <string name="changed_lang">Langue modifiée. Retournant au menu principal.</string>
 </resources>
