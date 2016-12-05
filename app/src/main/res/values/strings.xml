@@ -2,12 +2,12 @@
     <string name="app_name" translatable="false">Frank \'N\' Steins</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
-    <string name="action_settings" translatable="false">Settings</string>
+    <string name="action_settings">Settings</string>
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="buildafrankButtonText">BUILD YOUR OWN FRANK</string>
-    <string name="billEstimatorButtonText" translatable="false">BILL ESTIMATOR</string>
-    <string name="reserveTableButtonText" translatable="false">RESERVE A TABLE</string>
-    <string name="contactButtonText" translatable="false">CONTACT US</string>
+    <string name="billEstimatorButtonText">BILL ESTIMATOR</string>
+    <string name="reserveTableButtonText">RESERVE A TABLE</string>
+    <string name="contactButtonText">CONTACT US</string>
     <string name="menuButtonText" translatable="false">MENU</string>
     <string name="mainDescriptionText">Welcome to Frank \'N\' Steins: a place where Frankers and Frankettes of all ages can come and enjoy some of the most delicious, one-of-a-kind Franks you\'ll ever taste!</string>
     <string name="mainDescriptionText2">We also host some of the finest Steins on tap as well as many delicious beers on bottle for our 19+ patrons.</string>
