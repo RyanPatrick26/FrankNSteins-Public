@@ -59,7 +59,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         settings.registerOnSharedPreferenceChangeListener(new SharedPreferences.OnSharedPreferenceChangeListener() {
             /**
-             * 
+             * When the user selects a different language, the application will change the device's
+             * location settings to display the app in either French of English
              *
              * @author Nicholas Allaire
              * @param sharedPreferences
@@ -85,7 +86,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         // Replace the current activity with the Fragment and create a fragment transaction
         FragmentTransaction fragTran = fragMan.beginTransaction();
-        fragTran.addToBackStack(null);
         fragTran.replace(R.id.mainContent, new MainFragment());
         fragTran.commit();
 
