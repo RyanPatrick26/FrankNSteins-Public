@@ -37,6 +37,7 @@ public class MainFragment extends Fragment {
     private Button billEstimatorButton;
     private Button buildaFrankButton;
 
+    // create the fragment listener
     private OnFragmentInteractionListener mListener;
 
     // Create the fragment manager
@@ -142,9 +143,11 @@ public class MainFragment extends Fragment {
     public View.OnClickListener menuButtonListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            // Create the instantiate the fragment manager
+            fragMan = getActivity().getSupportFragmentManager();
             // Create the fragment transaction
             FragmentTransaction fragTrans = fragMan.beginTransaction();
-
+            fragTrans.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             fragTrans.replace(R.id.mainContent, new MenuFragment());
             fragTrans.addToBackStack(null);
             fragTrans.commit();
@@ -162,7 +165,7 @@ public class MainFragment extends Fragment {
             fragMan = getActivity().getSupportFragmentManager();
             // Create the fragment transaction
             FragmentTransaction fragTrans = fragMan.beginTransaction();
-
+            fragTrans.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             fragTrans.replace(R.id.mainContent, new ContactFragment());
             fragTrans.addToBackStack(null);
             fragTrans.commit();
@@ -180,7 +183,7 @@ public class MainFragment extends Fragment {
             fragMan = getActivity().getSupportFragmentManager();
             // Create the fragment transaction
             FragmentTransaction fragTrans = fragMan.beginTransaction();
-
+            fragTrans.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             fragTrans.replace(R.id.mainContent, new TableReserveFragment());
             fragTrans.addToBackStack(null);
             fragTrans.commit();
@@ -198,7 +201,7 @@ public class MainFragment extends Fragment {
             fragMan = getActivity().getSupportFragmentManager();
             // Create the fragment transaction
             FragmentTransaction fragTrans = fragMan.beginTransaction();
-
+            fragTrans.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             fragTrans.replace(R.id.mainContent, new BillEstimatorFragment());
             fragTrans.addToBackStack(null);
             fragTrans.commit();
@@ -216,7 +219,7 @@ public class MainFragment extends Fragment {
             fragMan = getActivity().getSupportFragmentManager();
             // Create the fragment transaction
             FragmentTransaction fragTrans = fragMan.beginTransaction();
-
+            fragTrans.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             fragTrans.replace(R.id.mainContent, new BuildAFrankFragment());
             fragTrans.addToBackStack(null);
             fragTrans.commit();
