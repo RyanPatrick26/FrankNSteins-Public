@@ -148,6 +148,8 @@ public class ContactFragment extends Fragment {
      * Steins email address.
      * If the user does not have an email client installed on their device,
      * a Snackbar informing the user of this will be displayed instead.
+     *
+     * @author Nicholas Allaire
      */
     public View.OnClickListener sendEmail = new View.OnClickListener() {
         @Override
@@ -183,6 +185,8 @@ public class ContactFragment extends Fragment {
      * and add the restaurant to the user's contact list.
      * If the user does not have the correct software installed on their device,
      * a Snackbar informing the user of this will be displayed instead.
+     *
+     * @author Nicholas Allaire
      */
     public  View.OnClickListener addToContacts = new View.OnClickListener() {
         @Override
@@ -215,6 +219,8 @@ public class ContactFragment extends Fragment {
      * and populate it with the location of the restaurant.
      * If the user does not have the correct software installed on their device,
      * a Snackbar informing the user of this will be displayed instead.
+     *
+     * @author Nicholas Allaire
      */
     public View.OnClickListener findLocation = new View.OnClickListener() {
         @Override
@@ -241,6 +247,8 @@ public class ContactFragment extends Fragment {
      * navigate to the Frank 'N' Steins website.
      * If the user does not have the correct software installed on their device,
      * a Snackbar informing the user of this will be displayed instead.
+     *
+     * @author Nicholas Allaire
      */
     public View.OnClickListener goToWebsite = new View.OnClickListener() {
         @Override
@@ -268,6 +276,8 @@ public class ContactFragment extends Fragment {
      * and send a pre-written message to a number of their choosing.
      * If the user does not have the correct software installed on their device,
      * a Snackbar informing the user of this will be displayed instead.
+     *
+     * @author Nicholas Allaire
      */
     public View.OnClickListener shareWithFriend = new View.OnClickListener() {
         @Override

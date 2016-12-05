@@ -1,13 +1,70 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.install.franknsteins.TableReserveFragment">
+    tools:context="com.example.install.franknsteins.TableReserveFragment"
+    android:background="@color/frankBackgroundColor"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-</FrameLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Select a date, time, and hit the \'Book Table\' button to book your table!"
+                android:id="@+id/trableReserveIntroText"
+                android:textColor="@color/frankTextColor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp" />
+
+            <CalendarView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableCalendarView"
+                android:background="@color/hotdog_color"/>
+
+            <TimePicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/timePicker"
+                android:amPmBackgroundColor="@color/hotdog_color"
+                android:amPmTextColor="@color/frankTextColor" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Time test"
+                android:id="@+id/timeTest"
+                android:gravity="center_horizontal"
+                android:textSize="20sp"
+                android:textColor="@color/frankTextColor"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Book Table"
+                android:id="@+id/bookTableButton"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/frankBackgroundColor"
+                android:background="@color/frankTextColor"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
