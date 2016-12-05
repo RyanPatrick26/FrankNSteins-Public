@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,7 +32,8 @@ public class MenuFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private SectionsPagerAdapter mPagerAdatper;
-
+    protected static ArrayList<String> itemList = new ArrayList<>();
+    protected static ArrayList<Double> priceList = new ArrayList<>();
 
     private OnFragmentInteractionListener mListener;
 
