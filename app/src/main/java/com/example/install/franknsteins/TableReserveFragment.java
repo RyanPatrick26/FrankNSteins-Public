@@ -118,13 +118,16 @@ public class TableReserveFragment extends Fragment {
         timePicker.is24HourView();
         timeHour = timePicker.getHour();
         timeMinute = timePicker.getMinute();
-        timeTest.setText("Time selected: "+timeHour+":"+timeMinute);
+        timeTest.setText("Time selected (24hr clock): "+timeHour+":"+timeMinute);
         // link the bookTable button to the one in the layout file
         bookTableButton = (Button) view.findViewById(R.id.bookTableButton);
         // create the date selection listener for the calendar
         tableCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             /**
-             *
+             * When the user selects a different date on the calendar, a toast is displayed
+             * with the selected date confirming the user made a selection.
+             * The custom time variables are assigned the values of the calendar's day,
+             * month, and year for later use with the book table button.
              *
              * @author Nicholas Allaire
              * @param calendarView
@@ -144,7 +147,11 @@ public class TableReserveFragment extends Fragment {
         // create the listener for the time picker
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             /**
-             *
+             * When the user selects a new time, the text of timeTest is set to the
+             * selected time for app testing and to let the user know what time they
+             * selected in a 24 hour format.
+             * The selected hour a minute are then assigned to custom variables for
+             * later use with the book table button
              *
              * @author Nicholas Allaire
              * @param timeView
@@ -153,7 +160,7 @@ public class TableReserveFragment extends Fragment {
              */
             @Override
             public void onTimeChanged(TimePicker timeView, int hourOfDay, int minute) {
-                timeTest.setText("Time selected: "+hourOfDay+":"+minute);
+                timeTest.setText("Time selected (24hr clock): "+hourOfDay+":"+minute);
                 timeHour = hourOfDay;
                 timeMinute = minute;
             }

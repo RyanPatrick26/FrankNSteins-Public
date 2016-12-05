@@ -21,7 +21,9 @@
                 android:text="Select a date, time, and hit the \'Book Table\' button to book your table!"
                 android:id="@+id/trableReserveIntroText"
                 android:textColor="@color/frankTextColor"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp" />
 
             <CalendarView
                 android:layout_width="match_parent"
