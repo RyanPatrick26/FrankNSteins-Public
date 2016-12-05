@@ -1,9 +1,12 @@
 package com.example.install.franknsteins;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
@@ -14,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -29,11 +33,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     // Create a fragment manager
     FragmentManager fragMan = getSupportFragmentManager();
 
+    //create the language string
+    private String language = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+
+        settings.registerOnSharedPreferenceChangeListener(new SharedPreferences.OnSharedPreferenceChangeListener() {
+            @Override
+            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                Toast.makeText(getBaseContext(),sharedPreferences.getString(key,"")+" from "+key+" selected.",
+                        Toast.LENGTH_SHORT).show();
+                    String language = sharedPreferences.toString();
+                    Locale locale = new Locale(language);
+                    Locale.setDefault(locale);
+                    Configuration config = new Configuration();
+                    config.locale = locale;
+                    getBaseContext().getResources().updateConfiguration(config,
+                            getBaseContext().getResources().getDisplayMetrics());
+                    Intent intent = getIntent();
+                    finish();
+                    startActivity(intent);
+            }
+        });
 
         // Replace the current activity with the Fragment and create a fragment transaction
         FragmentTransaction fragTran = fragMan.beginTransaction();
@@ -80,7 +107,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-
+            Intent intent = new Intent(MainActivity.this, PreferencesActivity.class);
+            startActivity(intent);
             return true;
         }
 

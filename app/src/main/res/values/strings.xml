@@ -27,7 +27,8 @@
     <!-- Strings related to Settings -->
     <string name="title_activity_settings">Settings</string>
 
-    <string name="pref_language_title">Application Language</string>
+    <string name="pref_language_summary">Change the application language</string>
+    <string name="pref_language_title">Language</string>
     <string-array name="pref_language">
         <item>English</item>
         <item>French</item>
