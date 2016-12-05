@@ -11,5 +11,6 @@
         android:id="@+id/topping_box"
         android:textSize="@dimen/sub_menu_text_size"
         android:paddingLeft="@dimen/sub_menu_padding"
-        android:layout_marginLeft="@dimen/sub_menu_indent" />
+        android:layout_marginLeft="@dimen/sub_menu_indent"
+        android:buttonTint="@color/hotdog_color" />
 </LinearLayout>
