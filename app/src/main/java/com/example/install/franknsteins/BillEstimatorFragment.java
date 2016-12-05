@@ -119,7 +119,7 @@ public class BillEstimatorFragment extends Fragment {
                 public void onStopTrackingTouch(SeekBar seekBar) { }
         });
 
-        setPrices(priceList, 0);
+        setPrices(priceList);
 
 
         menuButton = (Button)view.findViewById(R.id.menu_button);
@@ -218,7 +218,7 @@ public class BillEstimatorFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-    public static void setPrices(ArrayList<Double> priceList, int itemNumber){
+    public static void setPrices(ArrayList<Double> priceList){
         billAmount = 0.0;
         percent = 0.15;
         totalAmount = 0.0;
@@ -232,7 +232,7 @@ public class BillEstimatorFragment extends Fragment {
 
         beforeTipTextView.setText(currencyFormat.format(billAmount));
         tipTextView.setText(currencyFormat.format(billAmount*(percent)));
-        totalTextView.setText(currencyFormat.format(itemNumber));
+        totalTextView.setText(currencyFormat.format(totalAmount));
 
     }
 }
