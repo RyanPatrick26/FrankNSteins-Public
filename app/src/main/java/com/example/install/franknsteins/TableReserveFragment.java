@@ -5,9 +5,12 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.CalendarContract;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -56,9 +59,14 @@ public class TableReserveFragment extends Fragment {
     // create the bookTable button
     Button bookTableButton;
 
-    // ceate the time variables
-    private int hour;
-    private int minute;
+    // create the calendar variables
+    private int calYear;
+    private int calMonth;
+    private int calDay;
+
+    // create the time variables
+    private int timeHour;
+    private int timeMinute;
 
     private OnFragmentInteractionListener mListener;
 
@@ -101,14 +109,16 @@ public class TableReserveFragment extends Fragment {
 
         // link the calendarView to the one in the layout file
         tableCalendarView = (CalendarView) view.findViewById(R.id.tableCalendarView);
+        // set the calendar variables to default selected day
+
         // link the textview to the test one in the layout file
         timeTest = (TextView) view.findViewById(R.id.timeTest);
         // link the timepicker to the one in the layout file
         timePicker = (TimePicker) view.findViewById(R.id.timePicker);
         timePicker.is24HourView();
-        hour = timePicker.getHour();
-        minute = timePicker.getMinute();
-        timeTest.setText("Time: "+hour+":"+minute);
+        timeHour = timePicker.getHour();
+        timeMinute = timePicker.getMinute();
+        timeTest.setText("Time: "+timeHour+":"+timeMinute);
         // link the bookTable button to the one in the layout file
         bookTableButton = (Button) view.findViewById(R.id.bookTableButton);
         // create the date selection listener for the calendar
@@ -125,6 +135,9 @@ public class TableReserveFragment extends Fragment {
             @Override
             public void onSelectedDayChange(CalendarView calendarView, int year, int month, int dayOfMonth) {
                 Toast.makeText(getActivity(),month+"/"+dayOfMonth+"/"+year+" selected",Toast.LENGTH_SHORT).show();
+                calYear = year;
+                calMonth = month;
+                calDay = dayOfMonth;
             }
         });
 
@@ -141,20 +154,51 @@ public class TableReserveFragment extends Fragment {
             @Override
             public void onTimeChanged(TimePicker timeView, int hourOfDay, int minute) {
                 timeTest.setText("Time selected: "+hourOfDay+":"+minute);
-
+                timeHour = hourOfDay;
+                timeMinute = minute;
             }
         });
 
         bookTableButton.setOnClickListener(new View.OnClickListener() {
             /**
-             *
+             * Creates a new calendar instance and using the selected time and date variables
+             * creates a new event to be stored in the user's device
+             * If the user doesn't have the required software to run this intent, a
+             * snackbar will display.
              *
              * @author Nicholas Allaire
              * @param v
              */
             @Override
             public void onClick(View v) {
+                // Create a new calendar instance
+                Calendar bookedTableCalendar = Calendar.getInstance();
+                // set the calendar to the chosen date and time of ther user
+                bookedTableCalendar.set(calYear,calMonth,calDay,timeHour,timeMinute);
+                // convert the chosen date to a long
+                long bookedTime = bookedTableCalendar.getTimeInMillis();
 
+                // create a new intent for setting the date event
+                Intent intent = new Intent(Intent.ACTION_INSERT);
+                intent.setData(CalendarContract.Events.CONTENT_URI);
+                // set the title for the event
+                intent.putExtra(CalendarContract.Events.TITLE, "Frank 'N' Steins Reservation");
+                // set the location for the event
+                intent.putExtra(CalendarContract.Events.EVENT_LOCATION, "Frank 'N' Steins Restaurant");
+                // set the booked time for the event
+                intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, bookedTime);
+
+                // Check to see if the user has the correct software installed on their device
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                } else {
+                    // if not, display a snackbar notifying them of this issue
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "No installed software to complete process.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }
+                // Display a confirmation toast.
+                Toast.makeText(getActivity(),"Reservation booked. Thanks! Let's mark it in your calendar",Toast.LENGTH_LONG).show();
             }
         });
 
