@@ -1,17 +1,16 @@
 <resources>
     <string name="app_name" translatable="false">Frank \'N\' Steins</string>
-
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
-
     <string name="action_settings" translatable="false">Settings</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
-
     <string name="buildafrankButtonText">BUILD YOUR OWN FRANK</string>
     <string name="billEstimatorButtonText" translatable="false">BILL ESTIMATOR</string>
     <string name="reserveTableButtonText" translatable="false">RESERVE A TABLE</string>
     <string name="contactButtonText" translatable="false">CONTACT US</string>
     <string name="menuButtonText" translatable="false">MENU</string>
+    <string name="mainDescriptionText">Welcome to Frank \'N\' Steins: a place where Frankers and Frankettes of all ages can come and enjoy some of the most delicious, one-of-a-kind Franks you\'ll ever taste!</string>
+    <string name="mainDescriptionText2">We also host some of the finest Steins on tap as well as many delicious beers on bottle for our 19+ patrons.</string>
+    <string name="mainscreenFeaturesText">Please enjoy our app. With it, you can check out our menu, get in contact with us, make a table reservation, get an estimation on your bill and even build your own custom Frank! Check out some of app features below:</string>
+    <string name="mainSubtitleText">Gourmet Franks\nand\nTasty Steins!</string>
 </resources>
