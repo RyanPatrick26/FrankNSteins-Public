@@ -4,9 +4,12 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -109,6 +112,20 @@ public class MenuListFragment extends Fragment {
             }
             list.setAdapter(adapter);
         }
+
+        Button billEstimatorButton = (Button)view.findViewById(R.id.billEstimatorButton);
+        billEstimatorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                FragmentTransaction trans = fm.beginTransaction();
+                trans.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
+                trans.replace(R.id.mainContent, new BillEstimatorFragment());
+                trans.addToBackStack(null);
+                trans.commit();
+            }
+        });
+
         return view;
     }
 
