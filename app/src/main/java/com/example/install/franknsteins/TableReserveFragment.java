@@ -60,13 +60,13 @@ public class TableReserveFragment extends Fragment {
     Button bookTableButton;
 
     // create the calendar variables
-    private int calYear;
-    private int calMonth;
-    private int calDay;
+    private Integer calYear;
+    private Integer calMonth;
+    private Integer calDay;
 
     // create the time variables
-    private int timeHour;
-    private int timeMinute;
+    private Integer timeHour;
+    private Integer timeMinute;
 
     private OnFragmentInteractionListener mListener;
 
@@ -173,32 +173,41 @@ public class TableReserveFragment extends Fragment {
             public void onClick(View v) {
                 // Create a new calendar instance
                 Calendar bookedTableCalendar = Calendar.getInstance();
-                // set the calendar to the chosen date and time of ther user
-                bookedTableCalendar.set(calYear,calMonth,calDay,timeHour,timeMinute);
-                // convert the chosen date to a long
-                long bookedTime = bookedTableCalendar.getTimeInMillis();
+                // set the calendar to the chosen date and time of the user
+                // check if an initial date has been chosen, if not, display a snackbar
+                if (calYear != null && calMonth != null && calDay != null) {
 
-                // create a new intent for setting the date event
-                Intent intent = new Intent(Intent.ACTION_INSERT);
-                intent.setData(CalendarContract.Events.CONTENT_URI);
-                // set the title for the event
-                intent.putExtra(CalendarContract.Events.TITLE, "Frank 'N' Steins Reservation");
-                // set the location for the event
-                intent.putExtra(CalendarContract.Events.EVENT_LOCATION, "Frank 'N' Steins Restaurant");
-                // set the booked time for the event
-                intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, bookedTime);
+                    bookedTableCalendar.set(calYear,calMonth,calDay,timeHour,timeMinute);
+                    // convert the chosen date to a long
+                    long bookedTime = bookedTableCalendar.getTimeInMillis();
 
-                // Check to see if the user has the correct software installed on their device
-                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
-                    startActivity(intent);
+                    // create a new intent for setting the date event
+                    Intent intent = new Intent(Intent.ACTION_INSERT);
+                    intent.setData(CalendarContract.Events.CONTENT_URI);
+                    // set the title for the event
+                    intent.putExtra(CalendarContract.Events.TITLE, "Frank 'N' Steins Reservation");
+                    // set the location for the event
+                    intent.putExtra(CalendarContract.Events.EVENT_LOCATION, "Frank 'N' Steins Restaurant");
+                    // set the booked time for the event
+                    intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, bookedTime);
+
+                    // Check to see if the user has the correct software installed on their device
+                    if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                        startActivity(intent);
+                    } else {
+                        // if not, display a snackbar notifying them of this issue
+                        Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                                "No installed software to complete process.", Snackbar.LENGTH_SHORT);
+                        snackbar.show();
+                    }
+                    // Display a confirmation toast.
+                    Toast.makeText(getActivity(),"Reservation booked. Thanks! Let's mark it in your calendar",Toast.LENGTH_LONG).show();
+
                 } else {
-                    // if not, display a snackbar notifying them of this issue
                     Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                            "No installed software to complete process.", Snackbar.LENGTH_SHORT);
+                            "No date selected. Please select a date and then book your table.", Snackbar.LENGTH_LONG);
                     snackbar.show();
                 }
-                // Display a confirmation toast.
-                Toast.makeText(getActivity(),"Reservation booked. Thanks! Let's mark it in your calendar",Toast.LENGTH_LONG).show();
             }
         });
 
