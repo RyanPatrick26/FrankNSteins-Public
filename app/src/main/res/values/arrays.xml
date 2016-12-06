@@ -17,37 +17,16 @@
 
     <!-- Array to hold the String values for the Frank Descriptions -->
     <string-array name="frank_item_descriptions">
-        <item>The deliciously tried and true Frank with traditional
-                toppings like ketchup, mustard, and relish.</item>
-        <item>The early bird gets the Frank with this morning time
-                special. This frank comes with an egg cooked just how
-                you like it topped with bacon and hash browns. For those
-                of you with a sweet tooth, try it with delicious maple
-                syrup.</item>
-        <item>The spirit of French Canada is alive and well with this Canadian
-                classic. The Frankophone combines the greatness of the Frank
-                with the patriotic dish known as poutine. This Frank is topped
-                with gravy and cheese curds imported from Quebec.</item>
-        <item>Can’t decide between Pizza or Franks tonight? Try a Pizza Frank topped
-                with mozzarella cheese, pizza sauce, pepperoni, and mushrooms.</item>
-        <item>Remind everyone what you’re thankful for this year with this festive
-                Frank topped with gravy, corn, and creamy mashed potatoes.</item>>
-        <item>Think you can handle the sheer size and fire of the legendary Frankzilla?
-                This Frank is three times the size of a regular Frank and comes topped
-                with our secret Frank \'N\' Steins Hot Sauce, jalapeno peppers, and is
-                lightly spiced with ghost pepper powder. Frankzilla will leave its mark
-                on you.</item>
-        <item>Travel back to the Wild West with this cowboy-inspired Frank. This Frank comes
-                topped with onion rings, tomatoes, and our zesty BBQ sauce that will make you
-                feel like a modern-day buckaroo.</item>
-        <item>A taste of Italy captured inside a juicy Frank! This Frank comes topped with
-                provolone cheese, olives, olive oil, tomato, and lettuce.</item>
-        <item>A classic bratwurst (sausage) topped with mustard, sauerkraut, accompanied
-                with a small potato salad. Experience the taste of Oktoberfest!</item>
-        <item>A Frank with a Scottish twist. The Frank Wallace comes topped with a traditional
-                Scottish haggis: a pudding-like topping of sheep\’s pluck, minced with onion,
-                oatmeal, suet, spices, and salt. They can take your land, but they\'ll never take
-                your Frank!</item>
+        <item>@string/classicfrank_desc</item>
+        <item>@string/breakfastfrank_desc</item>
+        <item>@string/frankophone_desc</item>
+        <item>@string/pizzafrank_desc</item>
+        <item>@string/franksgiving_desc</item>>
+        <item>@string/frankzilla_desc</item>
+        <item>@string/frankobandito_desc</item>
+        <item>@string/frankoitaliano_desc</item>
+        <item>@string/deutschfrank_desc</item>
+        <item>@string/frankwallace_desc</item>
     </string-array>
 
     <!-- Array to hold the String values for the Frank Prices -->
