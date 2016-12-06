@@ -4,9 +4,18 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.SeekBar;
+import android.widget.TextView;
+
+import java.text.NumberFormat;
+import java.util.ArrayList;
 
 
 /**
@@ -22,10 +31,30 @@ public class BillEstimatorFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static final NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
+    private static final NumberFormat percentFormat = NumberFormat.getPercentInstance();
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private ArrayList<Double> priceList;
+
+    protected static double billAmount = 0.0;
+    protected static double percent = 0.15;
+    protected static double totalAmount;
+    private static TextView tipTextView;
+    private static TextView totalTextView;
+    private static TextView beforeTipTextView;
+    private static SeekBar seekBar;
+    private static TextView tipLabel;
+
+    private static BillItemAdapter adapter;
+
+    private ListView list;
+
+    private Button clearButton;
+    private Button menuButton;
 
     private OnFragmentInteractionListener mListener;
 
@@ -66,7 +95,88 @@ public class BillEstimatorFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_bill_estimator, container, false);
 
+        priceList = MenuFragment.priceList;
+
+        tipTextView = (TextView)view.findViewById(R.id.tip_amount_text_view);
+        beforeTipTextView = (TextView)view.findViewById(R.id.before_tip_text_view);
+        totalTextView = (TextView)view.findViewById(R.id.total_amount_text_view);
+        tipLabel = (TextView)view.findViewById(R.id.tip_percentage);
+
+        seekBar = (SeekBar)view.findViewById(R.id.percent_seek_bar);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                // update percent, then call calculate
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress,
+                boolean fromUser) {
+                    percent = progress / 100.0; // set percent based on progress
+                    calculate(); // calculate and display tip and total
+                }
+
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) { }
+
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) { }
+        });
+
+        setPrices(priceList);
+
+
+        menuButton = (Button)view.findViewById(R.id.menu_button);
+        clearButton = (Button)view.findViewById(R.id.clear_button);
+
+        list = (ListView)view.findViewById(R.id.bill_list);
+
+        adapter = new BillItemAdapter(getActivity(), MenuFragment.itemList, MenuFragment.priceList);
+        list.setAdapter(adapter);
+
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MenuFragment.itemList.clear();
+                MenuFragment.priceList.clear();
+
+                billAmount = 0.0;
+                percent = 0.15;
+                totalAmount = 0.0;
+
+                list.setAdapter(adapter);
+
+                tipLabel.setText(percentFormat.format(percent));
+
+                seekBar.setProgress(15);
+
+                beforeTipTextView.setText(currencyFormat.format(billAmount));
+                tipTextView.setText(currencyFormat.format(billAmount*(percent)));
+                totalTextView.setText(currencyFormat.format(totalAmount));
+            }
+        });
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                FragmentTransaction trans = fm.beginTransaction();
+                trans.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
+                trans.replace(R.id.mainContent, new MenuFragment());
+                trans.addToBackStack(null);
+                trans.commit();
+            }
+        });
+
         return view;
+    }
+
+    private void calculate() {
+        // format percent and display in percentTextView
+        tipLabel.setText(percentFormat.format(percent));
+
+        // calculate the tip and total
+        double tip = billAmount * percent;
+        double total = billAmount + tip;
+
+        // display tip and total formatted as currency
+        tipTextView.setText(currencyFormat.format(tip));
+        totalTextView.setText(currencyFormat.format(total));
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -106,5 +216,23 @@ public class BillEstimatorFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public static void setPrices(ArrayList<Double> priceList){
+        billAmount = 0.0;
+        percent = 0.15;
+        totalAmount = 0.0;
+
+        for(int i = 0; i < priceList.size(); i++){
+            billAmount += priceList.get(i);
+        }
+
+        billAmount *= 1.13;
+        totalAmount = billAmount+billAmount*percent;
+
+        beforeTipTextView.setText(currencyFormat.format(billAmount));
+        tipTextView.setText(currencyFormat.format(billAmount*(percent)));
+        totalTextView.setText(currencyFormat.format(totalAmount));
+
     }
 }
