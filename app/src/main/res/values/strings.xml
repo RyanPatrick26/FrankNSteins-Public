@@ -118,5 +118,15 @@
     <string name="clear_button_text">Clear Order</string>
     <string name="before_tip">Total Before Tip</string>
     <string name="bill_estimtator_title_text">Bill Estimator</string>
+    <string name="daychange">selected.</string>
+
+    <string name="nav_about">About Us</string>
+    <string name="nav_menu">Menu</string>
+    <string name="nav_bill">Bill Estimator</string>
+    <string name="nav_reserve">Reserve Table</string>
+    <string name="nav_buildfrank">Build-A-Frank</string>
+    <string name="nav_more">More</string>
+    <string name="nav_contact">Contact Us</string>
+    <string name="reservationbooked">Reservation booked. Thanks! You should mark it in your calendar</string>
 
 </resources>

@@ -31,24 +31,29 @@ public class PreferencesActivity extends PreferenceActivity {
              */
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                String language = sharedPreferences.getString(key,"en");
+                String language = sharedPreferences.getString(key, "en");
                 Locale locale = new Locale(language);
                 Locale.setDefault(locale);
                 Configuration config = new Configuration();
                 config.locale = locale;
                 getBaseContext().getResources().updateConfiguration(config,
                         getBaseContext().getResources().getDisplayMetrics());
-                Toast.makeText(getBaseContext(),R.string.changed_lang,
+                Toast.makeText(getBaseContext(), getString(R.string.changed_lang),
                         Toast.LENGTH_SHORT).show();
                 restartActivity();
             }
         });
     }
 
+    /**
+     * Creates a new intent to return to the MainActivty in order to refresh the
+     * application with the changed language.
+     *
+     * @author Nicholas Allaire
+     */
     private void restartActivity() {
-        Intent intent = new Intent(PreferencesActivity.this,MainActivity.class);
+        Intent intent = new Intent(PreferencesActivity.this, MainActivity.class);
         finish();
         startActivity(intent);
-
     }
 }

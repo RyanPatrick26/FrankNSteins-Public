@@ -140,7 +140,7 @@ public class TableReserveFragment extends Fragment {
              */
             @Override
             public void onSelectedDayChange(CalendarView calendarView, int year, int month, int dayOfMonth) {
-                Toast.makeText(getActivity(),month+"/"+dayOfMonth+"/"+year+" selected",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),month+"/"+dayOfMonth+"/"+year+" "+getString(R.string.daychange),Toast.LENGTH_SHORT).show();
                 calYear = year;
                 calMonth = month;
                 calDay = dayOfMonth;
