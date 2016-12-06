@@ -54,7 +54,7 @@ public class BillItemAdapter extends ArrayAdapter<String>{
                 itemList = MenuFragment.itemList;
                 priceList = MenuFragment.priceList;
 
-                BillEstimatorFragment.setPrices(priceList, itemNumber);
+                BillEstimatorFragment.setPrices(priceList);
 
             }
         });
