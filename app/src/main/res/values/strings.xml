@@ -11,6 +11,7 @@
     <string name="goToWebsiteButtonText">GO TO WEBSITE</string>
     <string name="shareButtonText">SHARE WITH A FRIEND</string>
     <string name="bookTableButton">Book Table</string>
+    <string name="estimate_bill_button">Estimate your Bill</string>
 
     <string name="app_name">Frank \'N\' Steins</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
@@ -62,6 +63,34 @@
                 your Frank!</string>
 
     <!-- Frank Stein Strings -->
+    <string name="frankweiser_desc">Our custom classic lager. Smooth and crisp, this Stein is the perfect companion
+                to any Frank</string>
+    <string name="fpa_desc">The Frank \'N\' Steins twist on the traditional India Pale Ale. This hoppy Stein will
+                satiate even the savviest Stein drinker.e</string>
+    <string name="frankwinterstein_desc">A holiday-themed Stein with a hint of chocolate to it. Warm your heart while
+                this tasty Stein quenches your thirst.</string>
+    <string name="steinomead_desc">Travel back to the days of Vikings and pillage your way through some delicious
+                Franks with the assistance of our mead-beer blended Stein. Sweet and tangy
+                like mead with the smooth crispiness of a beer.</string>
+    <string name="frankinapint_desc">For the true Frank fanatic. This lager is flavored to taste exactly like our
+                amazing Classic Frank. For a 100% Frank experience, go with this Stein.</string>
+    <string name="steinsred_desc">This Belgian Red beer follows the tradition of slightly soured red ale. Steins Red goes
+                great solo or accompanied by a tasty Frank.</string>
+    <string name="frankporter_desc">The Frank ‘N’ Steins porter has been a staple brand at our restaurant. This dark Stein
+                may seem mysterious, but it packs a ton of flavor.</string>
+    <string name="steinslite_desc">A lighter Stein for those seeking an alternative Stein. All the flavor of the Classic
+                Frank, but even smoother.</string>
+
+    <!-- Frank Stein Strings -->
+    <string name="pop">Pop</string>
+    <string name="milk">Milk</string>
+    <string name="choc_milk">Chocolate Milk</string>
+    <string name="water">Water</string>
+    <string name="icedtea">Iced Tea</string>
+    <string name="lemonade">Lemonade</string>
+    <string name="applejuice">Apple Juice</string>
+    <string name="coffee">Coffee</string>
+    <string name="alcoholfreeweiser">Alcohol Free Frankweiser</string>
 
     <!-- Bill estimator strings -->
 
@@ -81,6 +110,7 @@
     </string-array>
 
     <string name="changed_lang">Language changed. Returning to main menu</string>
+
 
 
 </resources>

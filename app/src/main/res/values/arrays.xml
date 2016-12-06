@@ -58,23 +58,14 @@
 
     <!-- Array to hold the String values for the Stein Descriptions -->
     <string-array name="stein_item_descriptions">
-        <item>Our custom classic lager. Smooth and crisp, this Stein is the perfect companion
-                to any Frank</item>
-        <item>The Frank \'N\' Steins twist on the traditional India Pale Ale. This hoppy Stein will
-                satiate even the savviest Stein drinker.</item>
-        <item>A holiday-themed Stein with a hint of chocolate to it. Warm your heart while
-                this tasty Stein quenches your thirst.</item>
-        <item>Travel back to the days of Vikings and pillage your way through some delicious
-                Franks with the assistance of our mead-beer blended Stein. Sweet and tangy
-                like mead with the smooth crispiness of a beer.</item>
-        <item>For the true Frank fanatic. This lager is flavored to taste exactly like our
-                amazing Classic Frank. For a 100% Frank experience, go with this Stein.</item>
-        <item>This Belgian Red beer follows the tradition of slightly soured red ale. Steins Red goes
-                great solo or accompanied by a tasty Frank.</item>
-        <item>The Frank ‘N’ Steins porter has been a staple brand at our restaurant. This dark Stein
-                may seem mysterious, but it packs a ton of flavor.</item>
-        <item>A lighter Stein for those seeking an alternative Stein. All the flavor of the Classic
-                Frank, but even smoother.</item>
+        <item>@string/frankwallace_desc</item>
+        <item>@string/fpa_desc</item>
+        <item>@string/frankwinterstein_desc</item>
+        <item>@string/steinomead_desc</item>
+        <item>@string/frankinapint_desc</item>
+        <item>@string/steinsred_desc</item>
+        <item>@string/frankporter_desc</item>
+        <item>@string/steinslite_desc</item>
     </string-array>
 
     <!-- Array to hold the String values for the Stein Prices -->
@@ -92,15 +83,15 @@
     <!-- The 3 arrays for the Non-Alcoholic Drinks section of the menu -->
     <!-- Array to hold the String values for the Non-Alchoholic Names -->
     <string-array name="non_alc_item_names">
-        <item>Pop</item>
-        <item>Milk</item>
-        <item>Chocolate Milk</item>
-        <item>Water</item>
-        <item>Iced Tea</item>
-        <item>Lemonade</item>
-        <item>Apple Juice</item>
-        <item>Coffee</item>
-        <item>Alcohol Free Frankweiser</item>
+        <item>@string/pop</item>
+        <item>@string/milk</item>
+        <item>@string/choc_milk</item>
+        <item>@string/water</item>
+        <item>@string/icedtea</item>
+        <item>@string/lemonade</item>
+        <item>@string/applejuice</item>
+        <item>@string/coffee</item>
+        <item>@string/alcoholfreeweiser</item>
     </string-array>
 
     <string-array name="non_alc_item_descriptions">
