@@ -1,22 +1,132 @@
 <resources>
-    <string name="app_name" translatable="false">Frank \'N\' Steins</string>
+    <!-- Strings for buttons -->
+    <string name="buildafrankButtonText">BUILD YOUR OWN FRANK</string>
+    <string name="reserveTableButtonText">RESERVE A TABLE</string>
+    <string name="contactButtonText">CONTACT US</string>
+    <string name="menuButtonText">MENU</string>
+    <string name="billEstimatorText">BILL ESTIMATOR</string>
+    <string name="emailButtonText">Email Us</string>
+    <string name="addToContactButtonText">ADD TO CONTACTS</string>
+    <string name="findLocationButtonText">FIND LOCATION</string>
+    <string name="goToWebsiteButtonText">GO TO WEBSITE</string>
+    <string name="shareButtonText">SHARE WITH A FRIEND</string>
+    <string name="bookTableButton">Book Table</string>
+    <string name="estimate_bill_button">Estimate your Bill</string>
 
+    <string name="app_name">Frank \'N\' Steins</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
-
-    <string name="action_settings" translatable="false">Settings</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="action_settings">Settings</string>
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
-    <string name="buildafrankButtonText">BUILD YOUR OWN FRANK</string>
-    <string name="billEstimatorButtonText" translatable="false">BILL ESTIMATOR</string>
-    <string name="reserveTableButtonText" translatable="false">RESERVE A TABLE</string>
-    <string name="contactButtonText" translatable="false">CONTACT US</string>
-    <string name="menuButtonText" translatable="false">MENU</string>
+    <!-- Additional Text Strings -->
+    <string name="mainDescriptionText">Welcome to Frank \'N\' Steins: a place where Frankers and Frankettes of all ages can come and enjoy some of the most delicious, one-of-a-kind Franks you\'ll ever taste!</string>
+    <string name="mainDescriptionText2">We also host some of the finest Steins on tap as well as many delicious beers on bottle for our 19+ patrons.</string>
+    <string name="mainscreenFeaturesText">Please enjoy our app. With it, you can check out our menu, get in contact with us, make a table reservation, get an estimation on your bill and even build your own custom Frank! Check out some of app features below:</string>
+    <string name="mainSubtitleText">Gourmet Franks\nand\nTasty Steins!</string>
+    <string name="contactTitleText">Contact Us!</string>
+    <string name="contactInfoText">Frank \'N\' Steins Restaurant\\n1178 Tecumseh Road W, Windsor\\n(519) - 780 3445\\nfranknsteins@gmail.com\\nwww.franknsteins.ca</string>
+    <string name="additionalInfoText">Additional contact features:</string>
+    <string name="tableReserveIntroText">Select a date, time, and hit the \'Book Table\' button to book your table!</string>
+
+    <!-- Frank Menu Strings -->
+    <string name="classicfrank_desc">The deliciously tried and true Frank with traditional
+                toppings like ketchup, mustard, and relish.</string>
+    <string name="breakfastfrank_desc">The early bird gets the Frank with this morning time
+                special. This frank comes with an egg cooked just how
+                you like it topped with bacon and hash browns. For those
+                of you with a sweet tooth, try it with delicious maple
+                syrup.</string>
+    <string name="frankophone_desc">The spirit of French Canada is alive and well with this Canadian
+                classic. The Frankophone combines the greatness of the Frank
+                with the patriotic dish known as poutine. This Frank is topped
+                with gravy and cheese curds imported from Quebec.</string>
+    <string name="pizzafrank_desc">Can\’t decide between Pizza or Franks tonight? Try a Pizza Frank topped
+                with mozzarella cheese, pizza sauce, pepperoni, and mushrooms.</string>
+    <string name="franksgiving_desc">Remind everyone what you’re thankful for this year with this festive
+                Frank topped with gravy, corn, and creamy mashed potatoes.</string>
+    <string name="frankzilla_desc">Think you can handle the sheer size and fire of the legendary Frankzilla?
+                This Frank is three times the size of a regular Frank and comes topped
+                with our secret Frank \'N\' Steins Hot Sauce, jalapeno peppers, and is
+                lightly spiced with ghost pepper powder. Frankzilla will leave its mark
+                on you.</string>
+    <string name="frankobandito_desc">Travel back to the Wild West with this cowboy-inspired Frank. This Frank comes
+                topped with onion rings, tomatoes, and our zesty BBQ sauce that will make you
+                feel like a modern-day buckaroo.</string>
+    <string name="frankoitaliano_desc">A taste of Italy captured inside a juicy Frank! This Frank comes topped with
+                provolone cheese, olives, olive oil, tomato, and lettuce.</string>
+    <string name="deutschfrank_desc">A classic bratwurst (sausage) topped with mustard, sauerkraut, accompanied
+                with a small potato salad. Experience the taste of Oktoberfest!</string>
+    <string name="frankwallace_desc">A Frank with a Scottish twist. The Frank Wallace comes topped with a traditional
+                Scottish haggis: a pudding-like topping of sheep\’s pluck, minced with onion,
+                oatmeal, suet, spices, and salt. They can take your land, but they\'ll never take
+                your Frank!</string>
+
+    <!-- Frank Stein Strings -->
+    <string name="frankweiser_desc">Our custom classic lager. Smooth and crisp, this Stein is the perfect companion
+                to any Frank</string>
+    <string name="fpa_desc">The Frank \'N\' Steins twist on the traditional India Pale Ale. This hoppy Stein will
+                satiate even the savviest Stein drinker.e</string>
+    <string name="frankwinterstein_desc">A holiday-themed Stein with a hint of chocolate to it. Warm your heart while
+                this tasty Stein quenches your thirst.</string>
+    <string name="steinomead_desc">Travel back to the days of Vikings and pillage your way through some delicious
+                Franks with the assistance of our mead-beer blended Stein. Sweet and tangy
+                like mead with the smooth crispiness of a beer.</string>
+    <string name="frankinapint_desc">For the true Frank fanatic. This lager is flavored to taste exactly like our
+                amazing Classic Frank. For a 100% Frank experience, go with this Stein.</string>
+    <string name="steinsred_desc">This Belgian Red beer follows the tradition of slightly soured red ale. Steins Red goes
+                great solo or accompanied by a tasty Frank.</string>
+    <string name="frankporter_desc">The Frank ‘N’ Steins porter has been a staple brand at our restaurant. This dark Stein
+                may seem mysterious, but it packs a ton of flavor.</string>
+    <string name="steinslite_desc">A lighter Stein for those seeking an alternative Stein. All the flavor of the Classic
+                Frank, but even smoother.</string>
+
+    <!-- Frank Stein Strings -->
+    <string name="pop">Pop</string>
+    <string name="milk">Milk</string>
+    <string name="choc_milk">Chocolate Milk</string>
+    <string name="water">Water</string>
+    <string name="icedtea">Iced Tea</string>
+    <string name="lemonade">Lemonade</string>
+    <string name="applejuice">Apple Juice</string>
+    <string name="coffee">Coffee</string>
+    <string name="alcoholfreeweiser">Alcohol Free Frankweiser</string>
+
+    <!-- Bill estimator strings -->
+
+
+    <!-- Strings related to Settings -->
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="pref_language_summary">Change the application language</string>
+    <string name="pref_language_title">Language</string>
+    <string-array name="pref_language">
+        <item>English</item>
+        <item>Français</item>
+    </string-array>
+    <string-array name="pref_language_values">
+        <item>en</item>
+        <item>fr</item>
+    </string-array>
+
+    <string name="changed_lang">Language changed. Returning to main menu</string>
+
+    <string name="billEstimatorButtonText">BILL ESTIMATOR</string>
     <string name="bill_estimator_title">Bill Estimator</string>
     <string name="tip_text_view">Tip Amount</string>
     <string name="total_amount">Total</string>
     <string name="clear_button_text">Clear Order</string>
     <string name="before_tip">Total Before Tip</string>
+    <string name="bill_estimtator_title_text">Bill Estimator</string>
+    <string name="daychange">selected.</string>
+
+    <string name="nav_about">About Us</string>
+    <string name="nav_menu">Menu</string>
+    <string name="nav_bill">Bill Estimator</string>
+    <string name="nav_reserve">Reserve Table</string>
+    <string name="nav_buildfrank">Build-A-Frank</string>
+    <string name="nav_more">More</string>
+    <string name="nav_contact">Contact Us</string>
+    <string name="reservationbooked">Reservation booked. Thanks! You should mark it in your calendar</string>
+
 </resources>

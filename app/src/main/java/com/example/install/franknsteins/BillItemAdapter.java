@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by Ryan Patrick on 12/5/2016.
@@ -19,7 +20,7 @@ public class BillItemAdapter extends ArrayAdapter<String>{
     private final Activity context;
     private ArrayList<String> itemList;
     private ArrayList<Double> priceList;
-    private static final NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
+    private static final NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.CANADA);;
 
     public BillItemAdapter(Activity context, ArrayList<String> itemList, ArrayList<Double> priceList) {
         super(context, R.layout.estimator_menu_item, itemList);
@@ -58,9 +59,6 @@ public class BillItemAdapter extends ArrayAdapter<String>{
 
             }
         });
-
-
-
         return estimatorView;
     }
 }

@@ -9,9 +9,12 @@ import android.provider.ContactsContract;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import java.util.Locale;
 
 
 /**
@@ -172,9 +175,15 @@ public class ContactFragment extends Fragment {
                 startActivity(intent);
             } else {
                 // if they don't have an email client, display a snackbar
-                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                        "No installed email client to complete process.", Snackbar.LENGTH_SHORT);
-                snackbar.show();
+                if (!Locale.getDefault().getLanguage().contentEquals("fr")) {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "No installed software to complete process.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "Aucun logiciel installé pour terminer le processus.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }
             }
         }
     };
@@ -206,9 +215,15 @@ public class ContactFragment extends Fragment {
                 startActivity(intent);
             } else {
                 // if they don't have the ability to add contacts on their device, display a snackbar
-                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                        "No installed software to complete the task.", Snackbar.LENGTH_SHORT);
-                snackbar.show();
+                if (!Locale.getDefault().getLanguage().contentEquals("fr")) {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "No installed software to complete process.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "Aucun logiciel installé pour terminer le processus.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }
             }
         }
     };
@@ -235,8 +250,15 @@ public class ContactFragment extends Fragment {
                 startActivity(intent);
             } else {
                 // if they don't have a maps software on their device, display a snackbar
-                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                        "No installed software to complete the task.", Snackbar.LENGTH_SHORT);
+                if (!Locale.getDefault().getLanguage().contentEquals("fr")) {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "No installed software to complete process.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "Aucun logiciel installé pour terminer le processus.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }
             }
         }
     };
@@ -263,9 +285,15 @@ public class ContactFragment extends Fragment {
             if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                 startActivity(intent);
             } else {
-                // if they don't have a web browser installed on their device, display a snackbar
-                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                        "No installed software to complete the task.", Snackbar.LENGTH_SHORT);
+                if (!Locale.getDefault().getLanguage().contentEquals("fr")) {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "No installed software to complete process.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "Aucun logiciel installé pour terminer le processus.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }
             }
         }
     };
@@ -294,11 +322,34 @@ public class ContactFragment extends Fragment {
                 startActivity(intent);
             } else {
                 // if the user does not have SMS, display a snackbar
-                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                        "No installed software to complete the task", Snackbar.LENGTH_SHORT);
-                snackbar.show();
+                if (!Locale.getDefault().getLanguage().contentEquals("fr")) {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "No installed software to complete process.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "Aucun logiciel installé pour terminer le processus.", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }
             }
         }
     };
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            Intent intent = new Intent(getActivity(), PreferencesActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
     
 }

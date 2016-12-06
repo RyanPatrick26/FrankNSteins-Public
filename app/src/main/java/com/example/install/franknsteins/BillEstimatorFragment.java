@@ -1,12 +1,14 @@
 package com.example.install.franknsteins;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -16,6 +18,7 @@ import android.widget.TextView;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 /**
@@ -31,7 +34,7 @@ public class BillEstimatorFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private static final NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
+    private static final NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.CANADA);
     private static final NumberFormat percentFormat = NumberFormat.getPercentInstance();
 
     // TODO: Rename and change types of parameters
@@ -94,7 +97,6 @@ public class BillEstimatorFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_bill_estimator, container, false);
-
         priceList = MenuFragment.priceList;
 
         tipTextView = (TextView)view.findViewById(R.id.tip_amount_text_view);
@@ -133,6 +135,7 @@ public class BillEstimatorFragment extends Fragment {
         clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 MenuFragment.itemList.clear();
                 MenuFragment.priceList.clear();
 
@@ -216,6 +219,23 @@ public class BillEstimatorFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            Intent intent = new Intent(getActivity(), PreferencesActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     public static void setPrices(ArrayList<Double> priceList){
