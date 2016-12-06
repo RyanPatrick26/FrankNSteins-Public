@@ -1,6 +1,10 @@
 package com.example.install.franknsteins;
 
+<<<<<<< HEAD
 import android.content.Intent;
+=======
+import android.content.res.ColorStateList;
+>>>>>>> staging
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -195,12 +199,15 @@ public class BuildAFrankFragment extends Fragment {
                 return group;
             }
             else{
+                int states[][] = {{android.R.attr.state_checked},{}};
+                int colors[] = {R.color.frankTextColor, R.color.hotdog_color};
                 //initialize the convertView to the layout for the sub-list that uses check boxes
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.sub_menu_toppings_item, parent, false);
                 //create a CheckBox for the topping and condiments sub-headers and put the String value for those
                 //list items using the children array
                 final CheckBox checkBox = (CheckBox)convertView.findViewById(R.id.topping_box);
                 checkBox.setText(getChild(i, j).toString());
+                checkBox.setButtonTintList(new ColorStateList(states, colors));
 
                 //create event handler for selecting and deselecting the different checkboxes
                 //adds the string value of the checkbox to the Toppings Text View

@@ -1,13 +1,153 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.install.franknsteins.BillEstimatorFragment">
+    tools:context="com.example.install.franknsteins.BillEstimatorFragment"
+    android:columnCount="2"
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:columnCount="2"
+        android:layout_weight="2">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bill_estimtator_title_text"
+            android:id="@+id/bill_estimtator_title_text"
+            android:layout_gravity="fill_horizontal"
+            android:layout_column="0"
+            android:layout_columnSpan="2"
+            android:textColor="@color/abc_input_method_navigation_guard"
+            android:textSize="@dimen/titleTextSize"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/before_tip_label"
+            android:layout_columnSpan="1"
+            android:textSize="@dimen/sub_menu_text_size"
+            android:textColor="@color/abc_primary_text_disable_only_material_light"
+            android:layout_gravity="center_vertical|right"
+            android:text="@string/before_tip"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/before_tip_text_view"
+            android:layout_columnSpan="1"
+            android:textColor="@color/abc_input_method_navigation_guard"
+            android:textSize="@dimen/sub_menu_text_size"
+            android:layout_gravity="fill_horizontal"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15%"
+            android:id="@+id/tip_percentage"
+            android:layout_gravity="center_vertical|right"
+            android:textColor="@color/abc_input_method_navigation_guard"
+            android:textSize="@dimen/sub_menu_text_size"
+            android:layout_margin="5dp" />
+
+        <SeekBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/percent_seek_bar"
+            android:layout_gravity="fill_horizontal"
+            android:max="30"
+            android:progress="15"
+            android:indeterminate="false"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tip_text_view"
+            android:id="@+id/tip_label"
+            android:layout_gravity="right"
+            android:textColor="@color/abc_input_method_navigation_guard"
+            android:textIsSelectable="false"
+            android:textSize="@dimen/sub_menu_text_size"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tip_amount_text_view"
+            android:layout_gravity="fill_horizontal"
+            android:textColor="@color/abc_input_method_navigation_guard"
+            android:textSize="@dimen/sub_menu_text_size"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_amount"
+            android:id="@+id/total_label"
+            android:layout_gravity="right"
+            android:textColor="@color/abc_input_method_navigation_guard"
+            android:textIsSelectable="false"
+            android:textSize="@dimen/sub_menu_text_size"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/total_amount_text_view"
+            android:layout_gravity="fill_horizontal"
+            android:textColor="@color/abc_input_method_navigation_guard"
+            android:textSize="@dimen/sub_menu_text_size"
+            android:layout_margin="5dp" />
+
+
+    </GridLayout>
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/bill_list"
+        android:layout_columnSpan="2"
+        android:layout_margin="5dp"
+        android:layout_weight="1.75" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clear_button_text"
+            android:id="@+id/clear_button"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:background="@color/hotdog_color"
+            android:layout_columnSpan="1"
+            android:padding="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Return to Menu"
+            android:id="@+id/menu_button"
+            android:layout_column="1"
+            android:background="@color/hotdog_color"
+            android:padding="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+    </LinearLayout>
+
+</LinearLayout>

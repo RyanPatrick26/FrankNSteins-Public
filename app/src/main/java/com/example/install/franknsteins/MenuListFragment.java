@@ -5,12 +5,17 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 
 /**
@@ -26,7 +31,6 @@ public class MenuListFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
     // TODO: Rename and change types of parameters
     private String mParam1;
     private int position;
@@ -110,6 +114,20 @@ public class MenuListFragment extends Fragment {
             }
             list.setAdapter(adapter);
         }
+
+        Button billEstimatorButton = (Button)view.findViewById(R.id.estimate_bill_button);
+        billEstimatorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                FragmentTransaction trans = fm.beginTransaction();
+                trans.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
+                trans.replace(R.id.mainContent, new BillEstimatorFragment());
+                trans.addToBackStack(null);
+                trans.commit();
+            }
+        });
+
         return view;
     }
 
