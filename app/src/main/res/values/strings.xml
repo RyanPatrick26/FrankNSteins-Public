@@ -111,11 +111,7 @@
 
     <string name="changed_lang">Language changed. Returning to main menu</string>
 
-    <string name="buildafrankButtonText">BUILD YOUR OWN FRANK</string>
-    <string name="billEstimatorButtonText" translatable="false">BILL ESTIMATOR</string>
-    <string name="reserveTableButtonText" translatable="false">RESERVE A TABLE</string>
-    <string name="contactButtonText" translatable="false">CONTACT US</string>
-    <string name="menuButtonText" translatable="false">MENU</string>
+    <string name="billEstimatorButtonText">BILL ESTIMATOR</string>
     <string name="bill_estimator_title">Bill Estimator</string>
     <string name="tip_text_view">Tip Amount</string>
     <string name="total_amount">Total</string>
