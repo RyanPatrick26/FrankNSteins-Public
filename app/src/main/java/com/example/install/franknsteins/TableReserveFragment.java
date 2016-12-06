@@ -14,6 +14,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -27,6 +29,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 
 /**
@@ -118,7 +121,7 @@ public class TableReserveFragment extends Fragment {
         timePicker.is24HourView();
         timeHour = timePicker.getHour();
         timeMinute = timePicker.getMinute();
-        timeTest.setText("Time selected (24hr clock): "+timeHour+":"+timeMinute);
+        timeTest.setText("(24hr): "+timeHour+":"+timeMinute);
         // link the bookTable button to the one in the layout file
         bookTableButton = (Button) view.findViewById(R.id.bookTableButton);
         // create the date selection listener for the calendar
@@ -137,7 +140,7 @@ public class TableReserveFragment extends Fragment {
              */
             @Override
             public void onSelectedDayChange(CalendarView calendarView, int year, int month, int dayOfMonth) {
-                Toast.makeText(getActivity(),month+"/"+dayOfMonth+"/"+year+" selected",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),month+"/"+dayOfMonth+"/"+year+" "+getString(R.string.daychange),Toast.LENGTH_SHORT).show();
                 calYear = year;
                 calMonth = month;
                 calDay = dayOfMonth;
@@ -160,7 +163,7 @@ public class TableReserveFragment extends Fragment {
              */
             @Override
             public void onTimeChanged(TimePicker timeView, int hourOfDay, int minute) {
-                timeTest.setText("Time selected (24hr clock): "+hourOfDay+":"+minute);
+                timeTest.setText("(24hr): "+hourOfDay+":"+minute);
                 timeHour = hourOfDay;
                 timeMinute = minute;
             }
@@ -203,17 +206,30 @@ public class TableReserveFragment extends Fragment {
                         startActivity(intent);
                     } else {
                         // if not, display a snackbar notifying them of this issue
-                        Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                                "No installed software to complete process.", Snackbar.LENGTH_SHORT);
-                        snackbar.show();
+                        if (!Locale.getDefault().getLanguage().contentEquals("fr")) {
+                            Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                                    "No installed software to complete process.", Snackbar.LENGTH_SHORT);
+                            snackbar.show();
+                        } else {
+                            Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                                    "Aucun logiciel installé pour terminer le processus.", Snackbar.LENGTH_SHORT);
+                            snackbar.show();
+                        }
+
                     }
                     // Display a confirmation toast.
                     Toast.makeText(getActivity(),"Reservation booked. Thanks! Let's mark it in your calendar",Toast.LENGTH_LONG).show();
 
                 } else {
-                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                            "No date selected. Please select a date from the calendar and then book your table.", Snackbar.LENGTH_LONG);
-                    snackbar.show();
+                    if (!Locale.getDefault().getLanguage().contentEquals("fr")) {
+                        Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                                "No date selected. Please select a date from the calendar and then book your table.", Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    } else {
+                        Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                                "Aucune date sélectionnée. Sélectionne une date dans le calendrier et réserve votre table.", Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    }
                 }
             }
         });
@@ -258,6 +274,23 @@ public class TableReserveFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            Intent intent = new Intent(getActivity(), PreferencesActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

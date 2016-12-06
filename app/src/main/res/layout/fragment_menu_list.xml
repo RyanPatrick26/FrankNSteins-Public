@@ -23,7 +23,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:text="Estimate your Bill"
+        android:text="@string/estimate_bill_button"
         android:id="@+id/estimate_bill_button"
         android:background="@color/hotdog_color"
         android:layout_gravity="right"

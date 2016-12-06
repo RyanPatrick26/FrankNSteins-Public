@@ -18,7 +18,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Select a date, time, and hit the \'Book Table\' button to book your table!"
+                android:text="@string/tableReserveIntroText"
                 android:id="@+id/trableReserveIntroText"
                 android:textColor="@color/frankTextColor"
                 android:textSize="20sp"
@@ -53,7 +53,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Book Table"
+                android:text="@string/bookTableButton"
                 android:id="@+id/bookTableButton"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"

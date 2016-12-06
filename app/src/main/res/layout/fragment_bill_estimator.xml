@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bill_estimator_title"
+            android:text="@string/bill_estimtator_title_text"
             android:id="@+id/bill_estimtator_title_text"
             android:layout_gravity="fill_horizontal"
             android:layout_column="0"
