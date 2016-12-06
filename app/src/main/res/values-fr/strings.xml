@@ -55,4 +55,9 @@
     <string name="tip_text_view">Montant du pourboire</string>
     <string name="total_amount">Total</string>
     <string name="water">L\'eau</string>
+    <string name="breakfastfrank_desc">L\'oiseau tôt obtient le Frank avec cette spéciale du matin. Ce Frank est livré avec un oeuf cuit juste comme vous le souhaitez surmonté de bacon et de hachis bruns. Pour ceux d\'entre vous avec une dent sucrée, essayez-le avec un sirop d\'érable délicieux.</string>
+    <string name="steinsred_desc">Cette bière rouge belge suit la tradition de la bière rouge légèrement aigre. Steins Red va solo ou accompagné d\'un délicieux Frank.</string>
+    <string name="frankophone_desc" translatable="false">L\'esprit du Canada français est bien vivant avec ce classique canadien. Le Frankophone combine la grandeur du Frank avec le plat patriotique connu sous le nom de poutine. Ce Frank est garni de sauce et de fromage importés du Québec.</string>
+    <string name="fpa_desc">Le Frank \'N\' Steins se tordent sur la traditionnelle Inde Pale Ale. Cette Stein houblonnée rassasiera même le buveur de Stein le plus savif.</string>
+    <string name="deutschfrank_desc">Un bratwurst classique (saucisse) garni de moutarde, choucroute, accompagné d\'une petite salade de pommes de terre. Découvrez le goût de l\'Oktoberfest!</string>
 </resources>
