@@ -32,12 +32,12 @@
     <!-- Frank Menu Strings -->
     <string name="classicfrank_desc">The deliciously tried and true Frank with traditional
                 toppings like ketchup, mustard, and relish.</string>
-    <string name="breakfastfrank_desc">The early bird gets the Frank with this morning time
+    <string name="breakfastfrank_desc" translatable="false">The early bird gets the Frank with this morning time
                 special. This frank comes with an egg cooked just how
                 you like it topped with bacon and hash browns. For those
                 of you with a sweet tooth, try it with delicious maple
                 syrup.</string>
-    <string name="frankophone_desc">The spirit of French Canada is alive and well with this Canadian
+    <string name="frankophone_desc" translatable="false">The spirit of French Canada is alive and well with this Canadian
                 classic. The Frankophone combines the greatness of the Frank
                 with the patriotic dish known as poutine. This Frank is topped
                 with gravy and cheese curds imported from Quebec.</string>
@@ -55,7 +55,7 @@
                 feel like a modern-day buckaroo.</string>
     <string name="frankoitaliano_desc">A taste of Italy captured inside a juicy Frank! This Frank comes topped with
                 provolone cheese, olives, olive oil, tomato, and lettuce.</string>
-    <string name="deutschfrank_desc">A classic bratwurst (sausage) topped with mustard, sauerkraut, accompanied
+    <string name="deutschfrank_desc" translatable="false">A classic bratwurst (sausage) topped with mustard, sauerkraut, accompanied
                 with a small potato salad. Experience the taste of Oktoberfest!</string>
     <string name="frankwallace_desc">A Frank with a Scottish twist. The Frank Wallace comes topped with a traditional
                 Scottish haggis: a pudding-like topping of sheep\’s pluck, minced with onion,
@@ -65,7 +65,7 @@
     <!-- Frank Stein Strings -->
     <string name="frankweiser_desc">Our custom classic lager. Smooth and crisp, this Stein is the perfect companion
                 to any Frank</string>
-    <string name="fpa_desc">The Frank \'N\' Steins twist on the traditional India Pale Ale. This hoppy Stein will
+    <string name="fpa_desc" translatable="false">The Frank \'N\' Steins twist on the traditional India Pale Ale. This hoppy Stein will
                 satiate even the savviest Stein drinker.e</string>
     <string name="frankwinterstein_desc">A holiday-themed Stein with a hint of chocolate to it. Warm your heart while
                 this tasty Stein quenches your thirst.</string>
@@ -74,7 +74,7 @@
                 like mead with the smooth crispiness of a beer.</string>
     <string name="frankinapint_desc">For the true Frank fanatic. This lager is flavored to taste exactly like our
                 amazing Classic Frank. For a 100% Frank experience, go with this Stein.</string>
-    <string name="steinsred_desc">This Belgian Red beer follows the tradition of slightly soured red ale. Steins Red goes
+    <string name="steinsred_desc" translatable="false">This Belgian Red beer follows the tradition of slightly soured red ale. Steins Red goes
                 great solo or accompanied by a tasty Frank.</string>
     <string name="frankporter_desc">The Frank ‘N’ Steins porter has been a staple brand at our restaurant. This dark Stein
                 may seem mysterious, but it packs a ton of flavor.</string>

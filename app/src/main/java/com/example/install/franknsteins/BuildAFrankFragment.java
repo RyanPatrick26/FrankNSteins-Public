@@ -1,10 +1,7 @@
 package com.example.install.franknsteins;
 
-<<<<<<< HEAD
 import android.content.Intent;
-=======
 import android.content.res.ColorStateList;
->>>>>>> staging
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
