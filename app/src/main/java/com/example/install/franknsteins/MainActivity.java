@@ -87,8 +87,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onRestart() {
+        super.onRestart();
         overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
     }
 
