@@ -65,7 +65,8 @@
                     android:max="30"
                     android:progress="15"
                     android:indeterminate="false"
-                    android:layout_margin="5dp" />
+                    android:layout_margin="5dp"
+                    android:background="@color/frankTextColor" />
 
                 <TextView
                     android:layout_width="wrap_content"
