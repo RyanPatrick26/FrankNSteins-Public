@@ -45,7 +45,8 @@
                 android:amPmBackgroundColor="@color/hotdog_color"
                 android:amPmTextColor="@color/frankTextColor"
                 android:layout_marginLeft="10dp"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="10dp" />
 
             <TextView
                 android:layout_width="match_parent"

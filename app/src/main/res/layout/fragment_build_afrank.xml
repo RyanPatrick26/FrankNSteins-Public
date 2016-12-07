@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/creation_text_box"
-                android:text="Your hotdog currently has:"
+                android:text="@string/currentlyHas"
                 android:textSize="@dimen/text_view_font_size"
                 android:textColor="@color/abc_primary_text_disable_only_material_light" />
 
@@ -54,13 +54,16 @@
 
 
     <Button
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Submit"
         android:id="@+id/submit_creation_button"
-        android:background="@color/hotdog_color"
+        android:background="@color/frankTextColor"
         android:layout_gravity="right"
-        android:layout_margin="15dp" />
+        android:layout_margin="5dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/frankBackgroundColor" />
 
 
 </LinearLayout>

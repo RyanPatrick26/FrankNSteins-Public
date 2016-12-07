@@ -150,5 +150,6 @@
     <string name="beefText">Beef</string>
     <string name="chickenText">Chicken</string>
     <string name="porkText">Pork</string>
+    <string name="currentlyHas">Your hotdog currently has:</string>
 
 </resources>
