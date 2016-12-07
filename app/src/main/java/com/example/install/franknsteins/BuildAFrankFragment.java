@@ -19,6 +19,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 /**
@@ -81,9 +82,15 @@ public class BuildAFrankFragment extends Fragment {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                        "Your creation has been saved!", Snackbar.LENGTH_SHORT);
-                snackbar.show();
+                if (!Locale.getDefault().getLanguage().contentEquals("fr")) {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "Your item has been saved!", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "Votre Frank a été sauvgardé!", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
             }
         });
 
@@ -112,7 +119,7 @@ public class BuildAFrankFragment extends Fragment {
 
     public class CustomListAdapter extends BaseExpandableListAdapter{
         //create an array containing a list of the headings for the main list
-        private String[] groups = {"Meats", "Toppings", "Condiments"};
+        private String[] groups = {getString(R.string.meats), getString(R.string.toppings), "Condiments"};
 
         //create a 2 dimensional array containing all the items to go into the sub lists
         private String[][] children = {{""},
