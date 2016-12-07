@@ -12,7 +12,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/title_text_view"
         android:gravity="center"
-        android:layout_weight="3.25" />
+        android:layout_weight="3.25"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textColor="@color/frankTextColor" />
 
     <ListView
         android:layout_width="match_parent"
@@ -21,7 +24,7 @@
         android:id="@+id/menu_content"></ListView>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/estimate_bill_button"
         android:id="@+id/estimate_bill_button"
@@ -30,7 +33,9 @@
         android:layout_margin="15dp"
         android:layout_weight="3"
         android:padding="5dp"
-        android:textColor="@color/frankBackgroundColor" />
+        android:textColor="@color/frankBackgroundColor"
+        android:textStyle="bold"
+        android:textSize="18sp" />
 
 
 </LinearLayout>

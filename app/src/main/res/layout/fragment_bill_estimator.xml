@@ -22,9 +22,10 @@
                     android:layout_gravity="fill_horizontal"
                     android:layout_column="0"
                     android:layout_columnSpan="2"
-                    android:textColor="@color/abc_input_method_navigation_guard"
+                    android:textColor="@color/frankTextColor"
                     android:textSize="@dimen/titleTextSize"
-                    android:gravity="center_horizontal" />
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -126,29 +127,36 @@
                 android:layout_weight="1.5">
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/clear_button_text"
                     android:id="@+id/clear_button"
                     android:layout_row="5"
                     android:layout_column="0"
-                    android:background="@color/hotdog_color"
+                    android:background="@color/frankTextColor"
                     android:layout_columnSpan="1"
                     android:padding="5dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp" />
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:textColor="@color/frankBackgroundColor" />
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Return to Menu"
                     android:id="@+id/menu_button"
                     android:layout_column="1"
-                    android:background="@color/hotdog_color"
+                    android:background="@color/frankTextColor"
                     android:padding="5dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_weight="0" />
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/frankBackgroundColor" />
             </LinearLayout>
 
 </LinearLayout>

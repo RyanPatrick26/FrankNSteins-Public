@@ -1,7 +1,10 @@
 package com.example.install.franknsteins;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -97,6 +100,9 @@ public class BillEstimatorFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_bill_estimator, container, false);
+
+        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
+
         priceList = MenuFragment.priceList;
 
         tipTextView = (TextView)view.findViewById(R.id.tip_amount_text_view);
