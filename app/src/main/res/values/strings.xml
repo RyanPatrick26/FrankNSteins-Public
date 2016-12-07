@@ -25,7 +25,7 @@
     <string name="mainscreenFeaturesText">Please enjoy our app. With it, you can check out our menu, get in contact with us, make a table reservation, get an estimation on your bill and even build your own custom Frank! Check out some of app features below:</string>
     <string name="mainSubtitleText">Gourmet Franks\nand\nTasty Steins!</string>
     <string name="contactTitleText">Contact Us!</string>
-    <string name="contactInfoText">Frank \'N\' Steins Restaurant\\n1178 Tecumseh Road W, Windsor\\n(519) - 780 3445\\nfranknsteins@gmail.com\\nwww.franknsteins.ca</string>
+    <string name="contactInfoText">Frank \'N\' Steins Restaurant\n1178 Tecumseh Road W, Windsor\n(519) - 780 3445\nfranknsteins@gmail.com\nwww.franknsteins.ca</string>
     <string name="additionalInfoText">Additional contact features:</string>
     <string name="tableReserveIntroText">Select a date, time, and hit the \'Book Table\' button to book your table!</string>
 
