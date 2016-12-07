@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by Ryan Patrick on 11/28/2016.
@@ -55,8 +56,14 @@ public class MenuItemAdapter extends ArrayAdapter<String> {
                 MenuFragment.itemList.add((String)itemTextView.getText());
                 MenuFragment.priceList.add(Double.parseDouble(itemPriceString));
 
-                Snackbar snackbar = Snackbar.make(parent, "Added to your order", Snackbar.LENGTH_SHORT);
-                snackbar.show();
+                if (!Locale.getDefault().getLanguage().contentEquals("fr")) {
+                    Snackbar snackbar = Snackbar.make(parent, "Added " + itemTextView.getText().toString() + " to your order", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                } else {
+                    Snackbar snackbar = Snackbar.make(parent, "Ajouté " + itemTextView.getText().toString() + " à votre ordre", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }
+
             }
         });
 
