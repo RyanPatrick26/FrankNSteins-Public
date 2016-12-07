@@ -7,126 +7,142 @@
     android:orientation="vertical"
     android:elevation="@dimen/design_navigation_elevation">
 
-
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Contact Us!"
-        android:id="@+id/contactTitleText"
-        android:gravity="center_horizontal"
-        android:textColor="@color/frankTextColor"
-        android:textStyle="bold"
-        android:textSize="@dimen/titleTextSize"
-        android:paddingTop="0dp"
-        android:layout_weight="1" />
+        android:layout_height="fill_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Frank 'N' Steins Restaurant\n1178 Tecumseh Road W, Windsor\n(519) - 780 3445\nfranknsteins@gmail.com\nwww.franknsteins.ca"
-        android:id="@+id/contactInfoText"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/frankTextColor"
-        android:paddingTop="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_weight="1" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Additional contact features:"
-        android:id="@+id/additionalInfoText"
-        android:textSize="20sp"
-        android:textColor="@color/frankTextColor"
-        android:textStyle="bold|italic"
-        android:gravity="center_horizontal"
-        android:paddingTop="10dp"
-        android:paddingBottom="0dp"
-        android:layout_weight="1" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/contactTitleText"
+                android:id="@+id/contactTitleText"
+                android:gravity="center_horizontal"
+                android:textColor="@color/frankTextColor"
+                android:textStyle="bold"
+                android:textSize="@dimen/titleTextSize"
+                android:paddingTop="0dp"
+                android:layout_weight="1" />
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Email Us"
-        android:id="@+id/emailButton"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:background="@color/frankTextColor"
-        android:textColor="@color/frankBackgroundColor"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:elevation="@dimen/design_navigation_elevation"
-        android:layout_weight="1"
-        android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/contactInfoText"
+                android:id="@+id/contactInfoText"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/frankTextColor"
+                android:paddingTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1" />
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="ADD TO CONTACTS"
-        android:id="@+id/addContactButton"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:background="@color/frankTextColor"
-        android:textColor="@color/frankBackgroundColor"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:elevation="@dimen/design_navigation_elevation"
-        android:layout_weight="1"
-        android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/additionalInfoText"
+                android:id="@+id/additionalInfoText"
+                android:textSize="20sp"
+                android:textColor="@color/frankTextColor"
+                android:textStyle="bold|italic"
+                android:gravity="center_horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="0dp"
+                android:layout_weight="1" />
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="FIND LOCATION"
-        android:id="@+id/findLocationButton"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:background="@color/frankTextColor"
-        android:textColor="@color/frankBackgroundColor"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:elevation="@dimen/design_navigation_elevation"
-        android:layout_weight="1"
-        android:textStyle="bold" />
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/emailButtonText"
+                android:id="@+id/emailButton"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:background="@color/frankTextColor"
+                android:textColor="@color/frankBackgroundColor"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:elevation="@dimen/design_navigation_elevation"
+                android:layout_weight="1"
+                android:textStyle="bold" />
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="GO TO WEBSITE"
-        android:id="@+id/websiteButton"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:background="@color/frankTextColor"
-        android:textColor="@color/frankBackgroundColor"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:elevation="@dimen/design_navigation_elevation"
-        android:layout_weight="1"
-        android:textStyle="bold" />
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/addToContactButtonText"
+                android:id="@+id/addContactButton"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:background="@color/frankTextColor"
+                android:textColor="@color/frankBackgroundColor"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:elevation="@dimen/design_navigation_elevation"
+                android:layout_weight="1"
+                android:textStyle="bold" />
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="SHARE WITH A FRIEND"
-        android:id="@+id/shareButton"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:background="@color/frankTextColor"
-        android:textColor="@color/frankBackgroundColor"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:elevation="@dimen/design_navigation_elevation"
-        android:layout_weight="1"
-        android:textStyle="bold"
-        android:layout_marginBottom="10dp" />
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/findLocationButtonText"
+                android:id="@+id/findLocationButton"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:background="@color/frankTextColor"
+                android:textColor="@color/frankBackgroundColor"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:elevation="@dimen/design_navigation_elevation"
+                android:layout_weight="1"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/goToWebsiteButtonText"
+                android:id="@+id/websiteButton"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:background="@color/frankTextColor"
+                android:textColor="@color/frankBackgroundColor"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:elevation="@dimen/design_navigation_elevation"
+                android:layout_weight="1"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/shareButtonText"
+                android:id="@+id/shareButton"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:background="@color/frankTextColor"
+                android:textColor="@color/frankBackgroundColor"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:elevation="@dimen/design_navigation_elevation"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>
+
+
+
+

@@ -6,26 +6,37 @@
     android:columnCount="2"
     android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="0">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/bill_estimtator_title_text"
+            android:id="@+id/bill_estimtator_title_text"
+            android:layout_gravity="fill_horizontal"
+            android:layout_column="0"
+            android:layout_columnSpan="2"
+            android:textColor="@color/frankTextColor"
+            android:textSize="@dimen/titleTextSize"
+            android:gravity="center_horizontal"
+            android:layout_weight="2"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
 
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="fill_parent"
                 android:columnCount="2"
                 android:layout_weight="1">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/bill_estimtator_title_text"
-                    android:id="@+id/bill_estimtator_title_text"
-                    android:layout_gravity="fill_horizontal"
-                    android:layout_column="0"
-                    android:layout_columnSpan="2"
-                    android:textColor="@color/frankTextColor"
-                    android:textSize="@dimen/titleTextSize"
-                    android:gravity="center_horizontal"
-                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -111,6 +122,7 @@
 
 
             </GridLayout>
+
             <ListView
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
@@ -119,44 +131,48 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1" />
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center"
-                android:layout_weight="1.5">
+        </LinearLayout>
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/clear_button_text"
-                    android:id="@+id/clear_button"
-                    android:layout_row="5"
-                    android:layout_column="0"
-                    android:background="@color/frankTextColor"
-                    android:layout_columnSpan="1"
-                    android:padding="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_weight="1"
-                    android:textColor="@color/frankBackgroundColor" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:layout_weight="2">
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Return to Menu"
-                    android:id="@+id/menu_button"
-                    android:layout_column="1"
-                    android:background="@color/frankTextColor"
-                    android:padding="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/frankBackgroundColor" />
-            </LinearLayout>
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="@string/clear_button_text"
+                android:id="@+id/clear_button"
+                android:layout_row="5"
+                android:layout_column="0"
+                android:background="@color/frankTextColor"
+                android:layout_columnSpan="1"
+                android:padding="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/frankBackgroundColor"
+                android:layout_weight="1"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="Return to Menu"
+                android:id="@+id/menu_button"
+                android:layout_column="1"
+                android:background="@color/frankTextColor"
+                android:padding="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/frankBackgroundColor"
+                android:layout_weight="1"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 
 </LinearLayout>

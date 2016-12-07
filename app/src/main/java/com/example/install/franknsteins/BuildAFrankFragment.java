@@ -1,10 +1,12 @@
 package com.example.install.franknsteins;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
@@ -91,14 +93,35 @@ public class BuildAFrankFragment extends Fragment {
     public interface OnFragmentInteractionListener {
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            Intent intent = new Intent(getActivity(), PreferencesActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     public class CustomListAdapter extends BaseExpandableListAdapter{
         //create an array containing a list of the headings for the main list
         private String[] groups = {"Meats", "Toppings", "Condiments"};
 
         //create a 2 dimensional array containing all the items to go into the sub lists
         private String[][] children = {{""},
-                                        {"Lettuce", "Onions", "Tomatoes", "Bacon", "Ham", "Mozzerella", "Swiss", "Cheddar", "Chili", "Egg"},
-                                        {"Mustard", "Ketchup", "Mayonnaise", "Relish", "Ranch", "Gravy"}};
+                                        {getString(R.string.buildFrank_lettuce), getString(R.string.buildFrank_onions), getString(R.string.buildFrank_tomato),
+                                                getString(R.string.buildFrank_bacon), getString(R.string.buildFrank_ham), getString(R.string.buildFrank_moz),
+                                                getString(R.string.buildFrank_swiss), getString(R.string.buildFrank_cheddar), getString(R.string.buildFrank_chili),
+                                                getString(R.string.buildFrank_egg)},
+                                        {getString(R.string.buildFrank_mustard), getString(R.string.buildFrank_ketchup),getString(R.string.buildFrank_mayo),
+                                                getString(R.string.buildFrank_relish), getString(R.string.buildFrank_ranch), getString(R.string.buildFrank_gravy)}};
        private ArrayList<String> toppingList = new ArrayList<>();
 
         //required methods from the BaseExpandableListAdapter class
@@ -144,6 +167,8 @@ public class BuildAFrankFragment extends Fragment {
         @Override
         public View getChildView(int i, int j, boolean isLastChild, View convertView, ViewGroup parent) {
             if(i == 0){
+                int states[][] = {{android.R.attr.state_checked},{}};
+                int colors[] = {R.color.frankTextColor, R.color.hotdog_color};
                 //initialize the convertView to the layout for the sub-list that uses radio buttons
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.meat_sub_menu, parent, false);
                 //create a RadioGroup that holds the different radio buttons for the different meats
@@ -153,6 +178,10 @@ public class BuildAFrankFragment extends Fragment {
                 final RadioButton porkButton = (RadioButton)convertView.findViewById(R.id.pork_radio_button);
                 final RadioButton beefButton = (RadioButton)convertView.findViewById(R.id.beef_radio_button);
                 final RadioButton chickenButton = (RadioButton) convertView.findViewById(R.id.chicken_radio_button);
+                porkButton.setButtonTintList(new ColorStateList(states, colors));
+                beefButton.setButtonTintList(new ColorStateList(states, colors));
+                chickenButton.setButtonTintList(new ColorStateList(states, colors));
+
 
                 //Create event handler for selecting and deselecting the different radio buttons
                 //Adds the String Value of the Checked Radio Button to the Meat Text View
@@ -193,10 +222,10 @@ public class BuildAFrankFragment extends Fragment {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         if(isChecked){
-                            toppingList.add((String)checkBox.getText());
+                            toppingList.add(checkBox.getText().toString());
                         }
                         else{
-                            toppingList.remove(checkBox.getText());
+                            toppingList.remove(checkBox.getText().toString());
                         }
                         toppingTextView.setText("");
                         for(int i = 0; i < toppingList.size(); i++){
