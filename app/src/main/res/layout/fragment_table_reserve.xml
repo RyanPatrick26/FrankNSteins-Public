@@ -16,31 +16,40 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/tableReserveIntroText"
                 android:id="@+id/trableReserveIntroText"
                 android:textColor="@color/frankTextColor"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_gravity="center_horizontal" />
 
             <CalendarView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:id="@+id/tableCalendarView"
-                android:background="@color/hotdog_color"/>
+                android:background="@color/hotdog_color"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal" />
 
             <TimePicker
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
                 android:id="@+id/timePicker"
                 android:amPmBackgroundColor="@color/hotdog_color"
-                android:amPmTextColor="@color/frankTextColor" />
+                android:amPmTextColor="@color/frankTextColor"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Time test"
                 android:id="@+id/timeTest"
@@ -48,11 +57,14 @@
                 android:textSize="20sp"
                 android:textColor="@color/frankTextColor"
                 android:layout_marginTop="10dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_gravity="center_horizontal" />
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:text="@string/bookTableButton"
                 android:id="@+id/bookTableButton"
                 android:layout_marginLeft="15dp"
@@ -61,7 +73,8 @@
                 android:background="@color/frankTextColor"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal" />
 
 
         </LinearLayout>
