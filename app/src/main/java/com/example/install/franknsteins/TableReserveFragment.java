@@ -6,6 +6,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -119,9 +120,11 @@ public class TableReserveFragment extends Fragment {
         // link the timepicker to the one in the layout file
         timePicker = (TimePicker) view.findViewById(R.id.timePicker);
         timePicker.is24HourView();
-        timeHour = timePicker.getHour();
-        timeMinute = timePicker.getMinute();
-        timeTest.setText("(24hr): "+timeHour+":"+timeMinute);
+        if (timeHour == null || timeMinute == null) {
+            timeTest.setText("(24hr):");
+        } else {
+            timeTest.setText("(24hr): "+timeHour+":"+timeMinute);
+        }
         // link the bookTable button to the one in the layout file
         bookTableButton = (Button) view.findViewById(R.id.bookTableButton);
         // create the date selection listener for the calendar

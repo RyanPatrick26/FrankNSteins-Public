@@ -25,7 +25,7 @@
     <string name="mainscreenFeaturesText">Please enjoy our app. With it, you can check out our menu, get in contact with us, make a table reservation, get an estimation on your bill and even build your own custom Frank! Check out some of app features below:</string>
     <string name="mainSubtitleText">Gourmet Franks\nand\nTasty Steins!</string>
     <string name="contactTitleText">Contact Us!</string>
-    <string name="contactInfoText">Frank \'N\' Steins Restaurant\\n1178 Tecumseh Road W, Windsor\\n(519) - 780 3445\\nfranknsteins@gmail.com\\nwww.franknsteins.ca</string>
+    <string name="contactInfoText">Frank \'N\' Steins Restaurant\n1178 Tecumseh Road W, Windsor\n(519) - 780 3445\nfranknsteins@gmail.com\nwww.franknsteins.ca</string>
     <string name="additionalInfoText">Additional contact features:</string>
     <string name="tableReserveIntroText">Select a date, time, and hit the \'Book Table\' button to book your table!</string>
 
@@ -92,7 +92,26 @@
     <string name="coffee">Coffee</string>
     <string name="alcoholfreeweiser">Alcohol Free Frankweiser</string>
 
-    <!-- Bill estimator strings -->
+    <!-- BuildAFrank strings -->
+
+    <string name="buildFrank_lettuce">Lettuce</string>
+    <string name="buildFrank_onions">Onions</string>
+    <string name="buildFrank_tomato">Tomatoes</string>
+    <string name="buildFrank_bacon">Bacon</string>
+    <string name="buildFrank_ham">Ham</string>
+    <string name="buildFrank_moz">Mozzarella</string>
+    <string name="buildFrank_swiss">Swiss</string>
+    <string name="buildFrank_cheddar">Cheddar</string>
+    <string name="buildFrank_chili">Chili</string>
+    <string name="buildFrank_egg">Egg</string>
+
+    <string name="buildFrank_mustard">Mustard</string>
+    <string name="buildFrank_ketchup">Ketchup</string>
+    <string name="buildFrank_mayo">Mayonnaise</string>
+    <string name="buildFrank_relish">Relish</string>
+    <string name="buildFrank_ranch">Ranch</string>
+    <string name="buildFrank_gravy">Gravy</string>
+
 
 
     <!-- Strings related to Settings -->
@@ -128,5 +147,9 @@
     <string name="nav_more">More</string>
     <string name="nav_contact">Contact Us</string>
     <string name="reservationbooked">Reservation booked. Thanks! You should mark it in your calendar</string>
+    <string name="beefText">Beef</string>
+    <string name="chickenText">Chicken</string>
+    <string name="porkText">Pork</string>
+    <string name="currentlyHas">Your hotdog currently has:</string>
 
 </resources>

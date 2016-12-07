@@ -75,7 +75,6 @@ public class MenuFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_menu, container, false);
-
         mPagerAdatper = new SectionsPagerAdapter(getChildFragmentManager());
         ViewPager mViewPager = (ViewPager)view.findViewById(R.id.restaurant_menu);
         mViewPager.setAdapter(mPagerAdatper);

@@ -13,7 +13,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Beef"
+            android:text="@string/beefText"
             android:id="@+id/beef_radio_button"
             android:checked="false"
             android:textSize="@dimen/sub_menu_text_size"
@@ -23,7 +23,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chicken"
+            android:text="@string/chickenText"
             android:id="@+id/chicken_radio_button"
             android:checked="false"
             android:textSize="@dimen/sub_menu_text_size"
@@ -33,7 +33,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pork"
+            android:text="@string/porkText"
             android:id="@+id/pork_radio_button"
             android:checked="false"
             android:textSize="@dimen/sub_menu_text_size"

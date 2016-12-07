@@ -116,8 +116,12 @@ public class BuildAFrankFragment extends Fragment {
 
         //create a 2 dimensional array containing all the items to go into the sub lists
         private String[][] children = {{""},
-                                        {"Lettuce", "Onions", "Tomatoes", "Bacon", "Ham", "Mozzerella", "Swiss", "Cheddar", "Chili", "Egg"},
-                                        {"Mustard", "Ketchup", "Mayonnaise", "Relish", "Ranch", "Gravy"}};
+                                        {getString(R.string.buildFrank_lettuce), getString(R.string.buildFrank_onions), getString(R.string.buildFrank_tomato),
+                                                getString(R.string.buildFrank_bacon), getString(R.string.buildFrank_ham), getString(R.string.buildFrank_moz),
+                                                getString(R.string.buildFrank_swiss), getString(R.string.buildFrank_cheddar), getString(R.string.buildFrank_chili),
+                                                getString(R.string.buildFrank_egg)},
+                                        {getString(R.string.buildFrank_mustard), getString(R.string.buildFrank_ketchup),getString(R.string.buildFrank_mayo),
+                                                getString(R.string.buildFrank_relish), getString(R.string.buildFrank_ranch), getString(R.string.buildFrank_gravy)}};
        private ArrayList<String> toppingList = new ArrayList<>();
 
         //required methods from the BaseExpandableListAdapter class
@@ -218,10 +222,10 @@ public class BuildAFrankFragment extends Fragment {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         if(isChecked){
-                            toppingList.add((String)checkBox.getText());
+                            toppingList.add(checkBox.getText().toString());
                         }
                         else{
-                            toppingList.remove(checkBox.getText());
+                            toppingList.remove(checkBox.getText().toString());
                         }
                         toppingTextView.setText("");
                         for(int i = 0; i < toppingList.size(); i++){

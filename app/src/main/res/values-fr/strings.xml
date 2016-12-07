@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="billEstimatorButtonText"></string>
+    <string name="billEstimatorButtonText">ESTIMATION DE FACTURE</string>
     <string name="buildafrankButtonText">CONTRUIT VOTRE FRANK</string>
     <string name="action_settings">Paramêtres</string>
     <string name="contactButtonText">CONTACTEZ NOUS</string>
@@ -69,4 +69,23 @@
     <string name="nav_reserve">Réservez votre table</string>
     <string name="reservationbooked">Réservation réservée. Merci! Marquez-le dans votre calendrier</string>
     <string name="frankophone_desc">L\'esprit du Canada français est bien vivant avec ce classique canadien. Le Frankophone combine la grandeur du Frank avec le plat patriotique connu sous le nom de poutine. Ce Frank est garni de sauce et de fromage importés du Québec.</string>
+    <string name="beefText">Boeuf</string>
+    <string name="buildFrank_bacon">Bacon</string>
+    <string name="buildFrank_cheddar">Cheddar</string>
+    <string name="buildFrank_egg">Oeuf</string>
+    <string name="buildFrank_chili">Chili</string>
+    <string name="buildFrank_gravy">Sauce de gras</string>
+    <string name="buildFrank_ham">Jambon</string>
+    <string name="buildFrank_ketchup">Ketchup</string>
+    <string name="buildFrank_lettuce">Laitue</string>
+    <string name="buildFrank_moz">Mozzarella</string>
+    <string name="buildFrank_onions">Onions</string>
+    <string name="buildFrank_ranch">Ranch</string>
+    <string name="buildFrank_mayo">Mayonnaise</string>
+    <string name="buildFrank_mustard">Moutarde</string>
+    <string name="buildFrank_relish">Le condiment</string>
+    <string name="buildFrank_swiss">Fromage Swiss</string>
+    <string name="buildFrank_tomato">Tomates</string>
+    <string name="chickenText">Poulet</string>
+    <string name="porkText">Porc</string>
 </resources>
