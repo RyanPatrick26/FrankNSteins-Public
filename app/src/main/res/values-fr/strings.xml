@@ -88,4 +88,5 @@
     <string name="buildFrank_tomato">Tomates</string>
     <string name="chickenText">Poulet</string>
     <string name="porkText">Porc</string>
+    <string name="currentlyHas">Ton chien-chaud a:</string>
 </resources>
