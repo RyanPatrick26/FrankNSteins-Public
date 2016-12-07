@@ -151,5 +151,9 @@
     <string name="chickenText">Chicken</string>
     <string name="porkText">Pork</string>
     <string name="currentlyHas">Your hotdog currently has:</string>
+    <string name="submitFrank">Submit</string>
+    
+    <string name="meats">Meats</string>
+    <string name="toppings">Toppings</string>
 
 </resources>
