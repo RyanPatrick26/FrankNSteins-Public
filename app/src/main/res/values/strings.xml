@@ -11,7 +11,7 @@
     <string name="goToWebsiteButtonText">GO TO WEBSITE</string>
     <string name="shareButtonText">SHARE WITH A FRIEND</string>
     <string name="bookTableButton">Book Table</string>
-    <string name="estimate_bill_button">Estimate your Bill</string>
+    <string name="estimate_bill_button">Estimate\nyour Bill</string>
 
     <string name="app_name">Frank \'N\' Steins</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
@@ -92,7 +92,26 @@
     <string name="coffee">Coffee</string>
     <string name="alcoholfreeweiser">Alcohol Free Frankweiser</string>
 
-    <!-- Bill estimator strings -->
+    <!-- BuildAFrank strings -->
+
+    <string name="buildFrank_lettuce">Lettuce</string>
+    <string name="buildFrank_onions">Onions</string>
+    <string name="buildFrank_tomato">Tomatoes</string>
+    <string name="buildFrank_bacon">Bacon</string>
+    <string name="buildFrank_ham">Ham</string>
+    <string name="buildFrank_moz">Mozzarella</string>
+    <string name="buildFrank_swiss">Swiss</string>
+    <string name="buildFrank_cheddar">Cheddar</string>
+    <string name="buildFrank_chili">Chili</string>
+    <string name="buildFrank_egg">Egg</string>
+
+    <string name="buildFrank_mustard">Mustard</string>
+    <string name="buildFrank_ketchup">Ketchup</string>
+    <string name="buildFrank_mayo">Mayonnaise</string>
+    <string name="buildFrank_relish">Relish</string>
+    <string name="buildFrank_ranch">Ranch</string>
+    <string name="buildFrank_gravy">Gravy</string>
+
 
 
     <!-- Strings related to Settings -->
@@ -128,5 +147,8 @@
     <string name="nav_more">More</string>
     <string name="nav_contact">Contact Us</string>
     <string name="reservationbooked">Reservation booked. Thanks! You should mark it in your calendar</string>
+    <string name="beefText">Beef</string>
+    <string name="chickenText">Chicken</string>
+    <string name="porkText">Pork</string>
 
 </resources>
