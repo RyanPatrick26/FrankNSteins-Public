@@ -222,10 +222,10 @@ public class BuildAFrankFragment extends Fragment {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         if(isChecked){
-                            toppingList.add((String)checkBox.getText());
+                            toppingList.add(checkBox.getText().toString());
                         }
                         else{
-                            toppingList.remove(checkBox.getText());
+                            toppingList.remove(checkBox.getText().toString());
                         }
                         toppingTextView.setText("");
                         for(int i = 0; i < toppingList.size(); i++){
