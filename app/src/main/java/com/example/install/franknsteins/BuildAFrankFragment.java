@@ -163,6 +163,8 @@ public class BuildAFrankFragment extends Fragment {
         @Override
         public View getChildView(int i, int j, boolean isLastChild, View convertView, ViewGroup parent) {
             if(i == 0){
+                int states[][] = {{android.R.attr.state_checked},{}};
+                int colors[] = {R.color.frankTextColor, R.color.hotdog_color};
                 //initialize the convertView to the layout for the sub-list that uses radio buttons
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.meat_sub_menu, parent, false);
                 //create a RadioGroup that holds the different radio buttons for the different meats
@@ -172,6 +174,10 @@ public class BuildAFrankFragment extends Fragment {
                 final RadioButton porkButton = (RadioButton)convertView.findViewById(R.id.pork_radio_button);
                 final RadioButton beefButton = (RadioButton)convertView.findViewById(R.id.beef_radio_button);
                 final RadioButton chickenButton = (RadioButton) convertView.findViewById(R.id.chicken_radio_button);
+                porkButton.setButtonTintList(new ColorStateList(states, colors));
+                beefButton.setButtonTintList(new ColorStateList(states, colors));
+                chickenButton.setButtonTintList(new ColorStateList(states, colors));
+
 
                 //Create event handler for selecting and deselecting the different radio buttons
                 //Adds the String Value of the Checked Radio Button to the Meat Text View
